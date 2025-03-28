@@ -1,67 +1,50 @@
-<!-- Instagram End -->
-<div style="border: 1px solid #0A68FF;"></div>
-<!-- Footer Section Begin -->
+
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-7">
+            <div class="col-lg-4 col-md-6 col-sm-7 order-2">
                 <div class="footer__about">
                     <div class="footer__logo">
-                        <a href="./index.html"><img src="public/img/fahasa-logo.png" alt=""></a>
+                        <a href="/index.php"><img src="public/img/Logo.png" alt="Logo" style="height: 60px;"></a>
                     </div>
-                    <p>Chào mừng bạn đến với FAHASA nơi cung cấp những loại sách chất lượng</p>
+                    <p>Thu Duc City, Ho Chi Minh City</p>
+                    <p>+84 353 13 7872</p>
                     
                 </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-5">
+            <div class="col-lg-2 col-md-3 col-sm-5 order-4">
                 <div class="footer__widget">
-                    <h6>ĐƯỜNG DẪN</h6>
+                    <h6>KHÁM PHÁ</h6>
                     <ul>
-                        <li><a href="#">Về chúng tôi</a></li>
-                        <li><a href="#">Blogs</a></li>
-                        <li><a href="#">Liên hệ</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Cửa hàng</a></li>
+                        <li><a href="#">Mua sắm</a></li>
+                        <li><a href="#">Giỏ hàng</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-4">
+            <div class="col-lg-2 col-md-3 col-sm-4 order-4">
                 <div class="footer__widget">
-                    <h6>tÀI khoẢN</h6>
+                    <h6>DANH MỤC</h6>
                     <ul>
-                        <li><a href="#">Tài khoản của tôi</a></li>
-                        <li><a href="#">Theo dõi đơn hàng</a></li>
-                        <li><a href="#">Thủ tục thanh toán</a></li>
-                        <li><a href="#">Danh sách yêu thích</a></li>
+                        <li><a href="#">Rau củ quả</a></li>
+                        <li><a href="#">Nông nghiệp</a></li>
+                        <li><a href="#">Phương pháp</a></li>
+                        <li><a href="#">Vitamin</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-8 col-sm-8">
+            <div class="col-lg-4 col-md-8 col-sm-8 order-1">
                 <div class="footer__newslatter">
-                    <h6>BẢN TIN</h6>
+                    <h6>ĐĂNG KÝ NHẬN ƯU ĐÃI</h6>
                     <form action="#">
-                        <input type="text" placeholder="Email">
-                        <button type="submit" class="site-btn">Theo dõi</button>
+                        <input type="text" placeholder="Email hoặc Số điện thoại">
+                        <button type="submit" class="site-btn">GỬI</button>
                     </form>
-                    <div class="footer__payment">
-                        <a href="#"><img src="public/img/payment/payment-1.png" alt=""></a>
-                        <a href="#"><img src="public/img/payment/payment-2.png" alt=""></a>
-                        <a href="#"><img src="public/img/payment/payment-3.png" alt=""></a>
-                        <a href="#"><img src="public/img/payment/payment-4.png" alt=""></a>
-                        <a href="#"><img src="public/img/payment/payment-5.png" alt=""></a>
-                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                <div class="footer__copyright__text">
-                    <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" target="_blank">KHOA NGUYEN</a></p>
-                </div>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </div>
-        </div>
     </div>
 </footer>
 <!-- Footer Section End -->
@@ -81,7 +64,7 @@
 <script>
     $(document).ready(function () {
         $("#toastr-success-top-right").on("click", function () {
-            toastr.success("1 sản phẩm đã thêm vào giỏ", "Thành công", {
+            toastr.success("Đã thêm vào giỏ hàng", "Thành công", {
                 closeButton: true,
                 debug: false,
                 newestOnTop: false,
@@ -117,6 +100,7 @@
 <!-- dialogflow -->
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 <df-messenger
+class="z-20"
     intent="WELCOME"
     chat-title="Chat"
     agent-id="a111a74a-8334-4098-9636-0f1433d6fc97"

@@ -24,26 +24,22 @@ if (!isset($_GET['url'])) {
     require_once "views/home.php";
 } else {
     switch ($_GET['url']) {
-        case 'trang-chu':
-
+        case 'home':
             require_once "views/home.php";
             break;
-        case 'cua-hang':
-
+        case 'shop':
             require_once "views/shop.php";
             break;
         case 'chitietsanpham':
-
             require_once "views/productdetail.php";
             break;
         case 'danh-muc-san-pham':
-
             require_once "views/shop-by-category.php";
             break;
         case 'lien-he':
             require_once "views/contact.php";
             break;
-        case 'gio-hang':
+        case 'cart':
             require_once "views/cart.php";
             break;
         case 'thanh-toan':
@@ -111,8 +107,6 @@ if (!isset($_GET['url'])) {
             break;
     }
 }
-
-require_once "components/minicart.php";
 
 require_once "components/footer.php";
 

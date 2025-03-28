@@ -2,14 +2,19 @@
   Footer
 -----------------------*/
 .footer {
-  padding-top: 55px;
+  padding-top: 48px;
+  background: #333;
+
+  h6 {
+    color: #fff !important;
+  }
 }
 
 .footer__about {
   margin-bottom: 30px;
-
   p {
     margin-bottom: 20px;
+    color:#CCC;
   }
 }
 
