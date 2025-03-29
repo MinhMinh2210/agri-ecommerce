@@ -49,41 +49,27 @@ $boderColorArray = [
 
 // Tên sản phẩm
 foreach ($statistics_orders as $value) {
-
     $ten_san_pham[] = $value['product_name'];
 }
 
 // Lượt bán
 foreach ($statistics_orders as $value) {
-
     $luot_ban[] = $value['total_sold_quantity'];
 }
-
 ?>
 
-<div class="mt-5">
-    <h5>Top sản phẩm bán chạy</h5>
-    <div class="dropdown">
-        <a class="btn btn-custom dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+<div class="container mt-5">
+    <h5 class="text-center mb-4">Top sản phẩm bán chạy</h5>
+    <div class="dropdown mb-4">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
             Top bán chạy
-        </a>
-
+        </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li> 
-                <a href="top-luot-ban&top=100" class="dropdown-item">Xem tất cả</a>
-            </li>
-            <li> 
-                <a href="top-luot-ban&top=5" class="dropdown-item">Top 5</a>
-            </li>
-            <li> 
-                <a href="top-luot-ban&top=10" class="dropdown-item">Top 10</a>
-            </li>
-            <li> 
-                <a href="top-luot-ban&top=15" class="dropdown-item">Top 15</a>
-            </li>
-            <li> 
-                <a href="top-luot-ban&top=30" class="dropdown-item">Top 30</a>
-            </li>
+            <li><a href="top-luot-ban&top=100" class="dropdown-item">Xem tất cả</a></li>
+            <li><a href="top-luot-ban&top=5" class="dropdown-item">Top 5</a></li>
+            <li><a href="top-luot-ban&top=10" class="dropdown-item">Top 10</a></li>
+            <li><a href="top-luot-ban&top=15" class="dropdown-item">Top 15</a></li>
+            <li><a href="top-luot-ban&top=30" class="dropdown-item">Top 30</a></li>
         </ul>
     </div>
 
@@ -101,13 +87,9 @@ foreach ($statistics_orders as $value) {
             labels: <?php echo json_encode($ten_san_pham); ?>,
             datasets: [{
                 label: 'Số lượng đã bán',
-
                 data: <?php echo json_encode($luot_ban); ?>,
-
                 backgroundColor: <?php echo json_encode($backgroundColorArray); ?>,
-
                 borderColor: <?php echo json_encode($boderColorArray); ?>,
-
                 borderWidth: 1
             }]
         },

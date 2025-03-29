@@ -74,20 +74,17 @@ for ($i = 1; $i <= $numberOfPages; $i++) {
     <div class="bg-light text-center rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Danh sách sản phẩm</h6>
-            <a href="them-san-pham" class="btn btn-custom text-success"><i class="fa fa-plus text-success"></i> Thêm sản phẩm</a>
-
+            <a href="them-san-pham" class="btn btn-success"><i class="fa fa-plus text-white"></i> Thêm sản phẩm</a>
         </div>
 
         <div class="row align-items-center">
             <div class="col-lg-7 d-flex mb-3">
-
                 <a class="link-hover" href="">Tất cả (<?= $totalProducts ?>) </a>
                 <div class="mx-2">|</div>
                 <a class="link-not-hover text-success" href="index.php?quanli=thung-rac-san-pham">Thùng rác (<?= count($count_recycle) ?>) </a>
             </div>
             <form action="" method="post" class="col-lg-5 d-flex mb-3 justify-content-end">
-
-                <div class="form-group ">
+                <div class="form-group">
                     <input type="search" name="keyword" class="form-control" placeholder="Tìm sản phẩm">
                 </div>
                 <div class="form-group mx-2">
@@ -97,23 +94,17 @@ for ($i = 1; $i <= $numberOfPages; $i++) {
                             <option value="<?= $value['category_id'] ?>">
                                 <?= $value['name'] ?>
                             </option>
-                        <?php
-                        endforeach
-                        ?>
+                        <?php endforeach ?>
                     </select>
                 </div>
-
-                <input type="submit" name="search" class="btn btn-custom text-success" value="Lọc">
-
+                <input type="submit" name="search" class="btn btn-success" value="Lọc">
             </form>
         </div>
 
-
         <div class="table-responsive">
-            <table class="table text-start align-middle table-bordered table-hover mb-0">
+            <table class="table table-bordered table-hover mb-0">
                 <thead>
                     <tr class="text-dark">
-
                         <th scope="col">#</th>
                         <th scope="col">Tên</th>
                         <th scope="col">Ảnh</th>
@@ -132,7 +123,6 @@ for ($i = 1; $i <= $numberOfPages; $i++) {
                         $orderNumber = ($currentPage - 1) * $productsPerPage + $index;
                     ?>
                         <tr>
-
                             <td class="text-dark"><?= $orderNumber ?></td>
                             <td class="text-dark" style="min-width: 200px;"><?= $value['name'] ?></td>
                             <td>
@@ -144,7 +134,6 @@ for ($i = 1; $i <= $numberOfPages; $i++) {
                             <td class="text-danger" style="font-weight: 600;">
                                 <?= number_format($value['sale_price']) . "₫" ?>
                             </td>
-
                             <td>
                                 <div class="dropdown">
                                     <a href="#" data-bs-toggle="dropdown" class="fs-24 text-gray">
@@ -162,12 +151,7 @@ for ($i = 1; $i <= $numberOfPages; $i++) {
                                 </div>
                             </td>
                         </tr>
-                    <?php
-                    }
-                    ?>
-
-
-
+                    <?php } ?>
                 </tbody>
             </table>
             <div class="col-12 mt-4">

@@ -1,7 +1,6 @@
 <?php
 
 $success = '';
-
 $error = array(
     'name' => '',
     'image' => '',
@@ -15,7 +14,6 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 } else {
     header("Location: index.php?quanli=danh-sach-danh-muc");
 }
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_category"])) {
     $name = trim($_POST["name"]);
@@ -85,41 +83,30 @@ $html_alert = $BaseModel->alert_error_success($error['image'], $success);
                         <?php if ($status == 1) { ?>
                             <option selected value="1">Hiển thị</option>
                             <option value="0">Tạm ẩn</option>
-                        <?php
-
-                        } else {
-
-                        ?>
+                        <?php } else { ?>
                             <option value="1">Hiển thị</option>
                             <option selected value="0">Tạm ẩn</option>
                         <?php } ?>
                     </select>
-
                 </div>
-
             </div>
         </div>
+
         <div class="col-sm-12 col-xl-3">
             <div class="bg-light rounded h-100 p-4">
                 <div class="mb-3">
                     <label for="formFileSm" class="form-label">Hình ảnh (JPG, PNG)</label> <br>
                     <span class="text-danger"><?= $error['image'] ?></span>
-                    <input style="background-color: #fff" name="image" class="form-control form-control-sm"
-                        id="formFileSm" type="file">
+                    <input style="background-color: #fff" name="image" class="form-control form-control-sm" id="formFileSm" type="file">
                     <div class="my-2">
-                        <img src="../upload/<?= $image ?>" width="100%" class="img-thumbnail" alt="">
+                        <img src="../upload/<?= $image ?>" width="100%" class="img-thumbnail" alt="Ảnh danh mục">
                     </div>
                 </div>
                 <h6 class="mb-4">
-                    <input type="submit" name="update_category" value="Cập nhật" class="btn btn-custom text-success">
-
+                    <button type="submit" name="update_category" class="btn btn-success w-100">Cập nhật</button>
                 </h6>
-
             </div>
         </div>
-
-
-
 
     </form>
 </div>
