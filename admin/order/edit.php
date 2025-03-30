@@ -1,34 +1,3 @@
-<?php
-if (isset($_GET['id']) && $_GET['id'] > 0) {
-    $order_id = $_GET['id'];
-} else {
-}
-$order_details = $OrderModel->getFullOrderInformation($order_id);
-foreach ($order_details as $value) {
-    extract($value);
-}
-
-// Trang thái đơn hàng
-$order_status = 'Chưa xác nhận';
-if ($status == 2) {
-    $order_status = 'Đã xác nhận';
-} elseif ($status == 3) {
-    $order_status = 'Đang giao';
-} elseif ($status == 4) {
-    $order_status = 'Giao thành công';
-}
-
-$date_formated = $BaseModel->date_format($order_date, '');
-
-// Cập nhật trạng thái
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])) {
-    $status = $_POST["status"];
-    $order_id = $_POST["order_id"];
-    $OrderModel->update_status_order($status, $order_id);
-    header("Location: index.php?quanli=cap-nhat-don-hang&id=$order_id");
-}
-?>
-
 <div class="container pt-4">
     <article class="card">
         <header class="card-header text-dark">

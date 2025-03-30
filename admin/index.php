@@ -9,6 +9,10 @@ if (!isset($_SESSION['user_admin'])) {
 }
 
 // Including necessary files
+require_once "controllers_admin/ProductController.php";
+require_once "controllers_admin/OrderController.php";
+require_once "controllers_admin/CategoryController.php";
+require_once "controllers_admin/CustomerController.php";
 require_once "models_admin/pdo_library.php";
 require_once "models_admin/BaseModel.php";
 require_once "models_admin/CategoryModel.php";
@@ -29,38 +33,48 @@ if (!isset($_GET['quanli'])) {
     switch ($_GET['quanli']) {
         // Product management
         case 'danh-sach-san-pham':
-            require_once "product/list.php";
+            $controller = new ProductController();
+            $controller->list();
             break;
         case 'them-san-pham':
-            require_once "product/add.php";
+            $controller = new ProductController();
+            $controller->add();
             break;
         case 'cap-nhat-san-pham':
-            require_once "product/edit.php";
+            $controller = new ProductController();
+            $controller->edit();
             break;
         case 'thung-rac-san-pham':
-            require_once "product/recycle-bin.php";
+            $controller = new ProductController();
+            $controller->delete();
             break;
 
         // Category management
         case 'danh-sach-danh-muc':
-            require_once "category/list.php";
+            $controller = new CategoryController();
+            $controller->list();
             break;
         case 'them-danh-muc':
-            require_once "category/add.php";
+            $controller = new CategoryController();
+            $controller->add();
             break;
         case 'cap-nhat-danh-muc':
-            require_once "category/edit.php";
+            $controller = new CategoryController();
+            $controller->edit();
             break;
 
         // Order management
         case 'danh-sach-don-hang':
-            require_once "order/list.php";
+            $controller = new OrderController();
+            $controller->list();
             break;
         case 'danh-sach-don-cho':
-            require_once "order/unconfirmed.php";
+            $controller = new OrderController();
+            $controller->unconfirmed();
             break;
         case 'cap-nhat-don-hang':
-            require_once "order/edit.php";
+            $controller = new OrderController();
+            $controller->edit();
             break;
 
         // Customer and account management
@@ -69,10 +83,12 @@ if (!isset($_GET['quanli'])) {
             header("Location: login.php");
             break;
         case 'danh-sach-khach-hang':
-            require_once "customer/list.php";
+            $controller = new CustomerController();
+            $controller->list();
             break;
         case 'them-tai-khoan':
-            require_once "customer/add.php";
+            $controller = new CustomerController();
+            $controller->add();
             break;
 
         // Comment management
