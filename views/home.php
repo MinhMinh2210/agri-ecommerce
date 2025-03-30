@@ -34,29 +34,29 @@ $product_order_by = $ProductModel->select_products_order_by(3, 'ASC');
         <div class="row">
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="services__item">
-                    <i class="fa fa-car"></i>
+                    <i class="fa-solid fa-truck"></i>
                     <h6>Giao hàng nhanh chóng</h6>
                     <p>Không lo về thời gian</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="services__item">
-                    <i class="fa fa-money"></i>
+                    <i class="fa-solid fa-money-bill-wave"></i>
                     <h6>Luôn có ưu đãi</h6>
                     <p>Giá rẻ nhất thị trường</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="services__item">
-                    <i class="fa fa-support"></i>
+                <i class="fa-solid fa-phone-volume"></i>
                     <h6>Hỏi gì cũng trả lời</h6>
                     <p>Hỗ trợ bởi công nghệ</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="services__item">
-                    <i class="fa fa-headphones"></i>
-                    <h6>Giao dịch online</h6>
+                <i class="fa-solid fa-comments-dollar"></i>
+                    <h6>Giao dịch nhanh chóng</h6>
                     <p>Thanh toán an toàn 100%</p>
                 </div>
             </div>

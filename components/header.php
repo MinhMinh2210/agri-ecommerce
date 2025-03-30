@@ -94,7 +94,7 @@
                             <ul class="header__right__widget">
                                 <li><span class="icon_search search-switch"></span></li>
 
-                                <li><a id="p" href="gio-hang"><i class="fa-solid fa-cart-shopping"></i>
+                                <li><a id="p" href="cart"><i class="fa-solid fa-cart-shopping"></i>
                                         <div class="tip"><?= $count_carts ?></div>
                                     </a></li>
                             </ul>
@@ -133,7 +133,6 @@
 
     <script>
         const currentPath = window.location.href.replace("http://localhost/WEBNONGSAN/", "");
-        console.log(currentPath)
         const activeLink = document.querySelector(`#navigation li a[href="${currentPath}"]`);
         activeLink.parentElement.classList.add("active");
     </script>

@@ -127,7 +127,7 @@
                                         
                                         <li>
                                         <?php if(isset($_SESSION['user'])) {?>
-                                            <form action="index.php?url=gio-hang" method="post">
+                                            <form action="index.php?url=cart" method="post">
                                                 <input value="<?=$product_id?>" type="hidden" name="product_id">
                                                 <input value="<?=$_SESSION['user']['id']?>" type="hidden" name="user_id">
                                                 <input value="<?=$name?>" type="hidden" name="name">

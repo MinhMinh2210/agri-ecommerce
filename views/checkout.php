@@ -1,8 +1,8 @@
 <!-- Breadcrumb Begin -->
 <?php
-    $success = '';
-    $error = '';
-try {    
+$success = '';
+$error = '';
+try {
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["checkout"])) {
         // Table orders
         $user_id = $_POST["user_id"];
@@ -22,21 +22,19 @@ try {
         $result_select = $OrderModel->select_order_id();
         $order_id = $result_select['order_id'];
 
-        if(!empty($order_id)) {
+        if (!empty($order_id)) {
             // Insert orderdetails
             for ($i = 0; $i < count($arr_product_id); $i++) {
                 $product_id = $arr_product_id[$i];
                 $quantity = $arr_quantity[$i];
                 $price = $arr_price[$i];
-    
+
                 $OrderModel->insert_orderdetails($order_id, $product_id, $quantity, $price);
             }
             // Sau khi đặt hàng xóa giỏ hàng
             $OrderModel->delete_cart_by_user_id($user_id);
             header("Location: cam-on");
         }
-        
-
     }
 } catch (Exception $e) {
     $error_message = $e->getMessage();
@@ -45,12 +43,12 @@ try {
 
 
 ?>
-<?php 
-    if(isset($_SESSION['user'])) { 
-        $user_id = $_SESSION['user']['id'];
-        $list_carts = $CartModel->select_all_carts($user_id);
-        $count_cart = count($CartModel->count_cart($user_id));
-    ?>
+<?php
+if (isset($_SESSION['user'])) {
+    $user_id = $_SESSION['user']['id'];
+    $list_carts = $CartModel->select_all_carts($user_id);
+    $count_cart = count($CartModel->count_cart($user_id));
+?>
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -70,15 +68,15 @@ try {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h6 class="coupon__link"><span class="icon_tag_alt mr-1"></span>Tiến hành thanh toán đơn hàng <a class="text-primary" href="gio-hang">Trở lại giỏ hàng</a> </h6>
+                    <h6 class="coupon__link"><span class="icon_tag_alt mr-1"></span>Tiến hành thanh toán đơn hàng <a class="text-primary" href="cart">Trở lại giỏ hàng</a> </h6>
                 </div>
             </div>
             <form action="" method="post" class="checkout__form">
                 <?php
-                    if($success != '') {
-                        $alert = $BaseModel->alert_error_success($error, $success);
-                        echo $alert;
-                    }
+                if ($success != '') {
+                    $alert = $BaseModel->alert_error_success($error, $success);
+                    echo $alert;
+                }
                 ?>
                 <div class="row">
                     <div class="col-lg-8">
@@ -138,39 +136,39 @@ try {
                                         <span class="top__text__right">Tổng</span>
                                     </li>
                                     <?php
-                                        $i = 0;
-                                        $totalPayment = 0;
-                                        foreach ($list_carts as $value) {
+                                    $i = 0;
+                                    $totalPayment = 0;
+                                    foreach ($list_carts as $value) {
                                         extract($value);
                                         $totalPrice = ($product_price * $product_quantity);
                                         $totalPayment += $totalPrice;
                                         $i++;
                                     ?>
-                                    <li>
-                                        <!-- Thông tin insert vào orders -->
-                                        <input type="hidden" name="user_id" value="<?=$user_id?>">
-                                        <input type="hidden" name="address" value="<?=$_SESSION['user']['address']?>">
-                                        <input type="hidden" name="phone" value="<?=$_SESSION['user']['phone']?>">
-                                        <input type="hidden" name="total_checkout" value="<?=$totalPayment?>">
-                                        <!-- Thông tin insert vào orderdetails -->
-                                        <input type="hidden" name="product_id[]" value="<?=$product_id?>">
-                                        <input type="hidden" name="quantity[]" value="<?=$product_quantity?>">
-                                        <input type="hidden" name="price[]" value="<?=$product_price?>">    
+                                        <li>
+                                            <!-- Thông tin insert vào orders -->
+                                            <input type="hidden" name="user_id" value="<?= $user_id ?>">
+                                            <input type="hidden" name="address" value="<?= $_SESSION['user']['address'] ?>">
+                                            <input type="hidden" name="phone" value="<?= $_SESSION['user']['phone'] ?>">
+                                            <input type="hidden" name="total_checkout" value="<?= $totalPayment ?>">
+                                            <!-- Thông tin insert vào orderdetails -->
+                                            <input type="hidden" name="product_id[]" value="<?= $product_id ?>">
+                                            <input type="hidden" name="quantity[]" value="<?= $product_quantity ?>">
+                                            <input type="hidden" name="price[]" value="<?= $product_price ?>">
 
-                                        <?=$i?>.
-                                        <?=$product_name?>
-                                        <a class="text-primary">x<?=$product_quantity?></a>
-                                        <span><?=number_format($totalPrice)?>đ</span>
-                                    </li>
+                                            <?= $i ?>.
+                                            <?= $product_name ?>
+                                            <a class="text-primary">x<?= $product_quantity ?></a>
+                                            <span><?= number_format($totalPrice) ?>đ</span>
+                                        </li>
                                     <?php
-                                        }
+                                    }
                                     ?>
                                 </ul>
                             </div>
                             <div class="checkout__order__total">
                                 <ul>
-                                   
-                                    <li>Tổng <span><?=number_format($totalPayment)?>đ</span></li>
+
+                                    <li>Tổng <span><?= number_format($totalPayment) ?>đ</span></li>
                                 </ul>
                             </div>
                             <!-- <div class="checkout__order__widget">
@@ -180,38 +178,38 @@ try {
                                     <span class="checkmark"></span>
                                 </label>
                             </div> -->
-                            <?php if($count_cart > 0) {?>
-                            <div class="checkout__order__widget text-center text-dark mb-2">                        
-                                 Thanh toán khi nhận hàng
-                            </div>   
-                            <button type="button" class="site-btn" data-toggle="modal" data-target="#thanh-toan-1">
-                                ĐẶT HÀNG
-                            </button>
-                            <!-- Modal thanh toán-->
-                            <div class="modal fade" id="thanh-toan-1" tabindex="-1" role="dialog" aria-labelledby="thanh-toan-1" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4>Xác nhận đặt hàng</h4>
-                                    </div>
-                                    <div class="modal-body text-dark">
-                                        Bạn có muốn tiếp tục đặt hàng ?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                                        <button type="submit" name="checkout"  class="btn btn-primary">Xác nhận</button>
-                                    </div>
+                            <?php if ($count_cart > 0) { ?>
+                                <div class="checkout__order__widget text-center text-dark mb-2">
+                                    Thanh toán khi nhận hàng
+                                </div>
+                                <button type="button" class="site-btn" data-toggle="modal" data-target="#thanh-toan-1">
+                                    ĐẶT HÀNG
+                                </button>
+                                <!-- Modal thanh toán-->
+                                <div class="modal fade" id="thanh-toan-1" tabindex="-1" role="dialog" aria-labelledby="thanh-toan-1" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4>Xác nhận đặt hàng</h4>
+                                            </div>
+                                            <div class="modal-body text-dark">
+                                                Bạn có muốn tiếp tục đặt hàng ?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                                                <button type="submit" name="checkout" class="btn btn-primary">Xác nhận</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
 
-                            <?php }else {?>
-                            <div class="checkout__order__widget text-center text-primary mb-2">                        
-                                Chưa có sản phẩm trong giỏ hàng
-                            </div> 
-                            <a href="cua-hang" class="site-btn btn">Xem sản phẩm</a>
-                            <?php }?>
+                            <?php } else { ?>
+                                <div class="checkout__order__widget text-center text-primary mb-2">
+                                    Chưa có sản phẩm trong giỏ hàng
+                                </div>
+                                <a href="cua-hang" class="site-btn btn">Xem sản phẩm</a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>

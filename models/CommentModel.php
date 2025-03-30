@@ -1,10 +1,16 @@
 <?php
+require_once "./config/Database.php";
     class CommentModel {
+        private $db;
 
+        public function __construct()
+        {
+            $this->db = new Database(); 
+        }
         public function insert_comment($user_id, $product_id, $content) {
             $sql = "INSERT INTO comments(user_id, product_id, content) VALUES (?,?,?)";
     
-            pdo_execute($sql, $user_id, $product_id, $content);
+            $this->db->execute($sql, $user_id, $product_id, $content);
         }
 
         function select_comments_by_id($product_id){
@@ -16,7 +22,7 @@
             ORDER BY comments.date DESC;
             
             ";
-            return pdo_query($sql, $product_id);
+            return $this->db->query($sql, $product_id);
         }
     }
 
