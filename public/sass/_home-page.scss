@@ -4,6 +4,12 @@
 .banner {
   height: 500px;
 }
+.carousel-item {
+  img {
+    max-height: 540px;
+    object-fit: cover;
+  }
+}
 
 #header-carousel .carousel-inner img {
   width: 100%;
@@ -128,9 +134,6 @@
     h4 {
       font-size: 20px;
 
-      &:after {
-        bottom: -6px;
-      }
     }
   }
 }
@@ -160,10 +163,10 @@
 
     i {
       font-size: 10px;
-      color: #e3c01c;
-      margin-right: -4px;
+      color: #fc8a20 !important;
+      margin-right: 2px;
 
-      &:last-child {
+      &:last-child {  
         margin-right: 0;
       }
     }
@@ -299,8 +302,8 @@
   Services
 -----------------------*/
 .services {
-  padding-top: 80px;
-  padding-bottom: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .services__item {

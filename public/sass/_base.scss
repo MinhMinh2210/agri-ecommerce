@@ -87,16 +87,7 @@ ol {
     text-transform: uppercase;
     position: relative;
     display: inline-block;
-
-    &:after {
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      height: 2px;
-      width: 70px;
-      background: $primary-color;
-      content: "";
-    }
+margin-top: 36px;
   }
 }
 
