@@ -1,6 +1,4 @@
-<?php
-$list_orders = $OrderModel->select_orders_unconfirmed();
-?>
+
 <div class="container-fluid pt-4 px-4">
     <div class="bg-light text-center rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
@@ -25,7 +23,7 @@ $list_orders = $OrderModel->select_orders_unconfirmed();
                     foreach ($list_orders as $value) {
                         extract($value);
                         $i++;
-                        $formatted_date = $BaseModel->date_format($order_date, '');
+                        $formatted_date = $this->BaseModel->date_format($order_date, '');
 
                         // Trang thái đơn hàng
                         $order_status = '<a href="#" class="btn btn-sm btn-danger">Chờ xác nhận</a>';
