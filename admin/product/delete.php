@@ -1,30 +1,3 @@
-<?php
-$success = '';
-if (isset($_GET['xoatam']) && $_GET['xoatam'] > 0) {
-    $product_id = $_GET['xoatam'];
-
-    $ProductModel->update_product_not_active($product_id);
-    $success = '1 sản phẩm đã thêm vào thùng rác';
-}
-
-if (isset($_GET['khoiphuc'])) {
-    $product_id = $_GET['khoiphuc'];
-
-    $ProductModel->update_product_active($product_id);
-    $success = '1 sản phẩm đã được khôi phục';
-}
-
-// Xóa vĩnh viễn
-if (isset($_GET['xoa'])) {
-    $product_id = $_GET['xoa'];
-    $ProductModel->delete_product($product_id);
-    $success = 'Đã xóa thành công 1 sản phẩm';
-}
-
-$list_products = $ProductModel->select_recycle_products();
-
-$html_alert = $BaseModel->alert_error_success('', $success)
-?>
 
 <!-- LIST PRODUCTS -->
 <div class="container-fluid pt-4 px-4">

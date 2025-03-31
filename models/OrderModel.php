@@ -9,13 +9,13 @@ class OrderModel
     {
         $this->db = new Database();
     }
+
     public function select_order_id()
     {
         $sql = "SELECT order_id FROM orders ORDER BY date DESC LIMIT 1";
 
         return $this->db->queryOne($sql);
     }
-
 
     // Select thông tin đon hàng
     public function select_list_orders($user_id)
@@ -99,6 +99,6 @@ class OrderModel
         $sql = "DELETE FROM carts WHERE user_id = ?";
         $this->db->execute($sql, $user_id);
     }
+    
 }
-
 $OrderModel = new OrderModel();
