@@ -1,79 +1,3 @@
-<?php
-
-$success = '';
-$error = '';
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_to_cart"])) {
-    $product_id = $_POST["product_id"];
-    $user_id = $_POST["user_id"];
-    $product_name = $_POST["name"];
-    $product_price = $_POST["price"];
-    $product_quantity = $_POST["product_quantity"];
-    $product_image = $_POST["image"];
-
-    // Đếm số lượng sản trong giỏ hàng
-    $product = $CartModel->select_cart_by_id($product_id, $user_id);
-    // Kiểm tra xem có sản phẩm trong giỏ hàng hay không
-    if ($product && is_array($product)) {
-        // Số lượng mới = số lượng hiện tại + số lượng vừa thêm
-        $current_quantity = $product['product_quantity'];
-        $new_quantity = $current_quantity + $product_quantity;
-
-        // Cập nhật số lượng
-        $CartModel->update_cart($new_quantity, $product_id, $user_id);
-        $success .= 'Đã cập nhật số lượng cho sản phẩm: ' . $product_name;
-    } else {
-        $product_quantity = $product_quantity;
-        $CartModel->insert_cart($product_id, $user_id, $product_name, $product_price, $product_quantity, $product_image);
-        $success = "Đã thêm sản phẩm vào giỏ hàng";
-    }
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_cart"]) && isset($_SESSION['user'])) {
-    // header("Location: index.php?url=cart");
-    // Lấy thông tin cần thiết từ form
-    $user_id = $_SESSION['user']['id'];
-    $product_id = $_POST["product_id"];
-    $new_quantity = $_POST["quantity"];
-    $index = 0; // Đếm số sản phẩm xóa
-
-    for ($i = 0; $i < count($product_id); $i++) {
-        $id = $product_id[$i];
-        $quantity = $new_quantity[$i];
-
-        if ($quantity <= 0) {
-            // Nếu số lượng >=0 xóa sản phẩm trong giỏ hàng     
-            $CartModel->delete_product_in_cart($id, $user_id);
-
-            $index += 1;
-        } elseif ($quantity > 0) {
-            $CartModel->update_cart($quantity, $id, $user_id);
-        }
-    }
-
-    if ($index > 0) {
-        $success = 'Đã xóa ' . $index . ' sản phẩm ra khỏi giỏ hàng';
-    } else {
-        $success = 'Cập nhật thành công';
-    }
-}
-
-if (isset($_GET['xoa'])) {
-    $cart_id = $_GET['xoa'];
-    $result = $CartModel->delete_cart_by_id($cart_id);
-
-    $success = 'Đã xóa 1 sản phẩm';
-}
-?>
-
-
-<?php
-if (isset($_SESSION['user'])) {
-    $user_id = $_SESSION['user']['id'];
-    $list_carts = $CartModel->select_all_carts($user_id);
-    $count_carts = count($CartModel->count_cart($user_id));
-}
-
-?>
 
 <?php if (isset($_SESSION['user'])) { ?>
     <div class="breadcrumb-option">
@@ -82,7 +6,7 @@ if (isset($_SESSION['user'])) {
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="index.php"><i class="fa fa-home"></i> Trang chủ</a>
-                        <a href="index.php?url=cua-hang"> Cửa hàng</a>
+                        <a href="index.php?url=shop"> Cửa hàng</a>
                         <span>Giỏ hàng</span>
                     </div>
                 </div>
@@ -100,7 +24,7 @@ if (isset($_SESSION['user'])) {
                         <div class="col-lg-12">
                             <!-- <form action="" method="post"> -->
                             <div class="shop__cart__table">
-                                <?= $alert = $BaseModel->alert_error_success($error, $success) ?>
+                                <?= $alert = $this->BaseModel->alert_error_success($error, $success) ?>
                                 <table>
                                     <thead>
                                         <tr>
@@ -120,7 +44,7 @@ if (isset($_SESSION['user'])) {
                                             //Tổn thanh toán
                                             $totalPayment += $totalPrice;
                                             // Lấy id danh mục của sản phẩm để hiện thị đường dẫn sang trang ctsp
-                                            $product = $ProductModel->select_cate_in_product($product_id);
+                                            $product = $this->ProductModel->select_cate_in_product($product_id);
 
                                         ?>
                                             <tr>
@@ -177,7 +101,7 @@ if (isset($_SESSION['user'])) {
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="cart__btn">
-                                <a href="index.php?url=cua-hang">Tiếp tục mua sắm</a>
+                                <a href="index.php?url=shop">Tiếp tục mua sắm</a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -222,7 +146,7 @@ if (isset($_SESSION['user'])) {
                     <div class="row rounded justify-content-center mx-0 pt-5">
                         <div class="col-md-6 text-center">
                             <h4 class="mb-4">Chưa có sản phẩm nào trong giỏ hàng</h4>
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="index.php?url=cua-hang">Xem sản phẩm</a>
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="index.php?url=shop">Xem sản phẩm</a>
                             <a class="btn btn-secondary rounded-pill py-3 px-5" href="index.php">Trang chủ</a>
                         </div>
                     </div>
@@ -250,13 +174,13 @@ if (isset($_SESSION['user'])) {
 
 <style>
     .cart__btn a:hover {
-        background-color: #0A68FF;
+        background-color:rgb(9, 174, 47);
         color: #fff;
         transition: 0.2s;
     }
 
     .cart__btn button:hover {
-        background-color: #0A68FF;
+        background-color:rgb(10, 166, 73);
         color: #fff;
         transition: 0.2s;
     }

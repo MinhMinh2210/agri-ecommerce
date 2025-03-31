@@ -1,24 +1,4 @@
-<?php
-    $list_products = '';
-    // Sản phẩm theo tên
-    if(isset($_GET['query']) && !empty($_GET['query'])) {
-        $query = trim($_GET['query']);
-        $list_products = $ProductModel->search_products($query);
-    }
 
-    // Sản phẩm theo giá
-    if(isset($_GET['from_price']) && isset($_GET['to_price'])) {
-        $from_price = $_GET['from_price'];
-        $to_price = $_GET['to_price'];
-
-        $list_products = $ProductModel->search_products_by_price($from_price, $to_price);
-    }
-    
-    // Giá cao và thấp nhất của sản phẩm
-    $min_max_price = $ProductModel->get_min_max_prices();
-
-    $list_catgories = $CategoryModel->select_all_categories();
-?>
 
 <!-- Breadcrumb Begin -->
 <div class="breadcrumb-option">
@@ -27,7 +7,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="index.php"><i class="fa fa-home"></i> Trang chủ</a>
-                        <a href="index.php?url=cua-hang">
+                        <a href="index.php?url=shop">
                             Tìm kiếm sản phẩm
                         </a>
                         <span>
@@ -111,7 +91,7 @@
                     <div class="row">
                         <?php foreach ($list_products as $value) {
                             extract($value);
-                            $discount_percentage = $ProductModel->discount_percentage($price, $sale_price);
+                            $discount_percentage = $this->ProductModel->discount_percentage($price, $sale_price);
                         ?>
                         <div class="col-lg-4 col-md-6 col-6-rp-mobile">
                             <div class="product__item sale">
@@ -181,7 +161,7 @@
                                         <input type="search" name="query" class="form-control" placeholder="Tìm kiếm" />
                                     </div>
                                 </form>
-                                <a class="btn btn-primary rounded-pill py-3 px-5 mt-5" href="index.php?url=cua-hang">Trở lại cửa hàng</a>
+                                <a class="btn btn-primary rounded-pill py-3 px-5 mt-5" href="index.php?url=shop">Trở lại cửa hàng</a>
                             </div>
                         </div>
                     </div>

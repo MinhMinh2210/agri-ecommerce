@@ -47,7 +47,7 @@
             try {
                 //MÃ hóa password
                 $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-                $result = $CustomerModel->reset_password($hashed_password, $email);
+                $result = $User->reset_password($hashed_password, $email);
                 $success = 'Đổi mật khẩu thành công';
                 //Xóa cookie sau khi reset mật khẩu
                 setcookie('otp', '' , time() + 1, '/');

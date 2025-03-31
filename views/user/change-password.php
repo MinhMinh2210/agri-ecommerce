@@ -69,7 +69,7 @@
             try {
                 //MÃ hóa password
                 $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-                $result = $CustomerModel->update_password($hashed_password, $user_id);
+                $result = $UserModel->update_password($hashed_password, $user_id);
 
                 // Cập nhật lại SESSION
                 $_SESSION['user']['password'] = $hashed_password;

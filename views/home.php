@@ -1,11 +1,4 @@
-<?php
-$listProducts = $ProductModel->select_products_limit(8);
 
-$listCategories = $CategoryModel->select_categories_limit(8);
-
-$product_limit_3 = $ProductModel->select_products_limit(3);
-$product_order_by = $ProductModel->select_products_order_by(3, 'ASC');
-?>
 
 <!-- Banner Section Begin -->
 <div class="row mt-5" style="width: 95%; margin: 0 auto;">
@@ -73,11 +66,6 @@ $product_order_by = $ProductModel->select_products_order_by(3, 'ASC');
 <!-- Product Section Begin -->
 <section class="product spad" style="background-color: #F4F4F9;">
 
-    <!-- CATER -->
-
-
-
-
     <div class="container" style="background-color: #ffffff; border-radius: 10px;">
 
         <div class="row pt-3 justify-content-center">
@@ -92,7 +80,7 @@ $product_order_by = $ProductModel->select_products_order_by(3, 'ASC');
             <?php foreach ($listProducts as $product) {
                 extract($product);
 
-                $discount_percentage = $ProductModel->discount_percentage($price, $sale_price);
+                $discount_percentage = $this->ProductModel->discount_percentage($price, $sale_price);
             ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix sach-1">
                     <a href="index.php?url=chitietsanpham&id_sp=<?= $product_id ?>&id_dm=<?= $category_id ?>">

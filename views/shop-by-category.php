@@ -1,13 +1,3 @@
-<?php
-if (isset($_GET['id']) && $_GET['id'] > 0) {
-    $category_id = $_GET['id'];
-    $list_products = $ProductModel->select_products_by_cate($category_id);
-} else {
-    header("Location: index.php");
-}
-
-$list_catgories = $CategoryModel->select_all_categories();
-?>
 
 <!-- Breadcrumb Begin -->
 <div class="breadcrumb-option">
@@ -16,7 +6,7 @@ $list_catgories = $CategoryModel->select_all_categories();
             <div class="col-lg-12">
                 <div class="breadcrumb__links">
                     <a href="index.php"><i class="fa fa-home"></i> Trang chủ</a>
-                    <a href="index.php?url=cua-hang">
+                    <a href="index.php?url=shop">
                         Sản phẩm
                     </a>
                     <span>
@@ -98,7 +88,7 @@ $list_catgories = $CategoryModel->select_all_categories();
                     <div class="row">
                         <?php foreach ($list_products as $value) {
                             extract($value);
-                            $discount_percentage = $ProductModel->discount_percentage($price, $sale_price);
+                            $discount_percentage = $this->ProductModel->discount_percentage($price, $sale_price);
                         ?>
                             <div class="col-lg-4 col-md-6 col-6-rp-mobile">
                                 <div class="product__item sale">
@@ -163,7 +153,7 @@ $list_catgories = $CategoryModel->select_all_categories();
                         <div class="row rounded justify-content-center mx-0 pt-5">
                             <div class="col-md-6 text-center">
                                 <h4 class="mb-4">Danh mục chưa có sản phẩm</h4>
-                                <a class="btn btn-primary rounded-pill py-3 px-5" href="index.php?url=cua-hang">Trở lại cửa hàng</a>
+                                <a class="btn btn-primary rounded-pill py-3 px-5" href="index.php?url=shop">Trở lại cửa hàng</a>
                             </div>
                         </div>
                     </div>

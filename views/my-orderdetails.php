@@ -3,7 +3,7 @@
         $user_id = $_SESSION['user']['id'];
         if(isset($_GET['id']) && $_GET['id'] > 0) $order_id = $_GET['id'];
 
-        $list_orders = $OrderModel->getFullOrderInformation($user_id, $order_id);
+        $list_orders = $this->OrderModel->getFullOrderInformation($user_id, $order_id);
         foreach ($list_orders as $value) {
             extract($value);
         }
@@ -41,9 +41,9 @@
             <article class="card">
                 <div class="card-body row">
                     <?php
-                        $booking_date = $BaseModel->date_format($order_date, '');
+                        $booking_date = $this->BaseModel->date_format($order_date, '');
                         
-                        $delivery_date = $BaseModel->date_format($order_date, 5);
+                        $delivery_date = $this->BaseModel->date_format($order_date, 5);
                         
                         
                     ?>

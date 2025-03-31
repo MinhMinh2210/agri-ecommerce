@@ -1,15 +1,4 @@
-<?php
-if (isset($_GET['page'])) {
-    $page = $_GET['page'];
-} else {
-    $page = 1;
-}
 
-$list_products = $ProductModel->select_list_products($page, 9);
-$list_catgories = $CategoryModel->select_all_categories();
-
-
-?>
 
 <!-- Breadcrumb Begin -->
 <div class="breadcrumb-option">
@@ -38,7 +27,7 @@ $list_catgories = $CategoryModel->select_all_categories();
                         </div>
                         <div class="categories__accordion">
                             <div class="accordion" id="accordionExample">
-                                <?php foreach ($list_catgories as $value) {
+                                <?php foreach ($list_categories as $value) {
                                     extract($value);
                                 ?>
                                     <div class="card">
@@ -88,7 +77,7 @@ $list_catgories = $CategoryModel->select_all_categories();
                 <div class="row">
                     <?php foreach ($list_products as $value) {
                         extract($value);
-                        $discount_percentage = $ProductModel->discount_percentage($price, $sale_price);
+                        $discount_percentage = $this->ProductModel->discount_percentage($price, $sale_price);
                     ?>
                         <div class="col-lg-4 col-md-6 col-6-rp-mobile">
                             <div class="product__item sale">
@@ -145,17 +134,7 @@ $list_catgories = $CategoryModel->select_all_categories();
                     ?>
 
                     <?php
-                    // Phân trang
-                    $qty_product = $ProductModel->count_products();
-                    $totalProducts = count($qty_product); // Tổng số sản phẩm
-                    $productsPerPage = 9; // sản phẩm trên 1 trang
-
-                    // Tính số trang
-                    $totalProducts = intval($totalProducts);
-                    $productsPerPage = intval($productsPerPage);
-                    $numberOfPages = ceil($totalProducts / $productsPerPage);
-
-                    $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
+                    //  Pagination
 
                     $html_pagination = '';
                     $pagination_next = '';
@@ -168,20 +147,20 @@ $list_catgories = $CategoryModel->select_all_categories();
                         }
 
                         $html_pagination .= '
-                                    <a class="' . $active . '" href="index.php?url=cua-hang&page=' . $i . '">' . $i . '</a>
+                                    <a class="' . $active . '" href="index.php?url=shop&page=' . $i . '">' . $i . '</a>
                                 ';
 
                         //  Next
                         if ($currentPage < $numberOfPages) {
                             $pagination_next = '
-                                        <a href="index.php?url=cua-hang&page=' . ($currentPage + 1) . '"><i class="fa fa-angle-right"></i></a>
+                                        <a href="index.php?url=shop&page=' . ($currentPage + 1) . '"><i class="fa fa-angle-right"></i></a>
                                     ';
                         }
 
                         //  Prev
                         if ($currentPage > 1) {
                             $pagination_prev = '
-                                        <a href="index.php?url=cua-hang&page=' . ($currentPage - 1) . '"><i class="fa fa-angle-left"></i></a>
+                                        <a href="index.php?url=shop&page=' . ($currentPage - 1) . '"><i class="fa fa-angle-left"></i></a>
                                     ';
                         }
                     }

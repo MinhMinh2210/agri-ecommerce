@@ -57,7 +57,7 @@
             }
     
             try {
-                $result = $CustomerModel->update_user($full_name, $address, $phone, $image, $user_id);
+                $result = $UserModel->update_user($full_name, $address, $phone, $image, $user_id);
 
                 // Cập nhật lại SESSION
                 $_SESSION['user']['full_name'] = $full_name;

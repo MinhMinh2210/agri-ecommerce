@@ -227,7 +227,7 @@ if (isset($_SESSION['user'])) {
                                 <div class="checkout__order__widget text-center text-primary mb-2">
                                     Chưa có sản phẩm trong giỏ hàng
                                 </div>
-                                <a href="cua-hang" class="site-btn btn">Xem sản phẩm</a>
+                                <a href="shop" class="site-btn btn">Xem sản phẩm</a>
                             <?php } ?>
                         </div>
                     </div>

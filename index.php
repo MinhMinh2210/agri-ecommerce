@@ -3,16 +3,20 @@ ob_start();
 session_start();
 
 
-require_once "models/pdo_library.php";
 require_once "models/BaseModel.php";
+require_once "controllers/HomeController.php";
+require_once "controllers/ProductController.php";
+require_once "controllers/CartController.php";
+require_once "controllers/OrderController.php";
+require_once "controllers/AuthController.php";
 require_once "models/ProductModel.php";
 require_once "models/CategoryModel.php";
-require_once "models/CustomerModel.php";
+require_once "models/UserModel.php";
 require_once "models/CommentModel.php";
 require_once "models/CartModel.php";
 require_once "models/OrderModel.php";
 require_once "models/PostModel.php";
-define('BASE_URL', 'index.php?url=');
+define('BASE_URL', '');
 define('URL_MOMO', 'http://localhost/WEBNONGSAN/cam-on');
 define('URL_ORDER', 'http://localhost/WEBNONGSAN/don-hang');
 
@@ -21,32 +25,32 @@ require_once "components/header.php";
 
 
 if (!isset($_GET['url'])) {
-    require_once "views/home.php";
+    $controller = new HomeController();
+    $controller->index();
 } else {
     switch ($_GET['url']) {
-        case 'home':
-            require_once "views/home.php";
-            break;
         case 'shop':
-            require_once "views/shop.php";
+            $controller = new ProductController();
+            $controller->index();
             break;
         case 'chitietsanpham':
-            require_once "views/productdetail.php";
+            $controller = new ProductController();
+            $controller->detail();
             break;
         case 'danh-muc-san-pham':
-            require_once "views/shop-by-category.php";
+            $controller = new ProductController();
+            $controller->getByCategory();
             break;
         case 'lien-he':
             require_once "views/contact.php";
             break;
         case 'cart':
-            require_once "views/cart.php";
+            $controller = new CartController();
+            $controller->list();
             break;
         case 'thanh-toan':
-            require_once "views/checkout.php";
-            break;
-        case 'thanh-toan-2':
-            require_once "views/checkout-address.php";
+            $controller = new OrderController();
+            $controller->checkout();
             break;
         case 'thanh-toan-momo':
             require_once "views/checkout/checkout_momo.php";
@@ -55,17 +59,21 @@ if (!isset($_GET['url'])) {
             require_once "views/thanks.php";
             break;
         case 'don-hang':
-            require_once "views/my-order.php";
+            $controller = new OrderController();
+            $controller->order_history();
             break;
         case 'chi-tiet-don-hang':
-            require_once "views/my-orderdetails.php";
+            $controller = new OrderController();
+            $controller->order_details();
             break;
         // User
         case 'dang-nhap':
-            require_once "views/user/login.php";
+            $controller = new AuthController();
+            $controller->login();
             break;
         case 'dang-ky':
-            require_once "views/user/register.php";
+            $controller = new AuthController();
+            $controller->register();
             break;
         case 'dang-xuat':
             unset($_SESSION['user']);
@@ -99,7 +107,8 @@ if (!isset($_GET['url'])) {
             break;
         //Bài viết
         case 'tim-kiem':
-            require_once "views/search.php";
+            $controller = new ProductController();
+            $controller->search();
             break;
 
         default:

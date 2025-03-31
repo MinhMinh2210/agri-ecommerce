@@ -1,6 +1,6 @@
 <?php
 require_once "./config/Database.php";
-    class CustomerModel {
+    class UserModel {
         private $db;
 
         public function __construct()
@@ -60,5 +60,5 @@ require_once "./config/Database.php";
         }
     }
 
-    $CustomerModel = new CustomerModel();
+    $UserModel = new UserModel();
 ?>

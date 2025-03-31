@@ -22,7 +22,7 @@
     }
     
     a {
-      color: #3869D4;
+      color:rgb(24, 153, 50);
     }
     
     a img {

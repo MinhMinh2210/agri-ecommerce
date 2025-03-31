@@ -11,13 +11,13 @@
             $error = 'Email không được để trống';
         }
 
-        $result = $CustomerModel->select_email_in_users($email);
+        $result = $UserModel->select_email_in_users($email);
         if ($result === false) {
             $error = 'Email không tồn tại';
         } else {
             $token = bin2hex(random_bytes(50));
 
-            $title = 'Khôi phục mật khẩu FAHASA';
+            $title = 'Khôi phục mật khẩu VegetaBox';
 
             // Thêm đường dẫn khôi phục vào nội dung email
             $recoveryLink = URL_RECOVERY.'khoi-phuc-mat-khau&email='.$email.'&token='.$token;
