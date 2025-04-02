@@ -1,6 +1,7 @@
 <?php
 require_once "models/CartModel.php";
 require_once "models/ProductModel.php";
+require_once "models/CategoryModel.php";
 require_once "models/BaseModel.php";
 
 class CartController
@@ -8,12 +9,14 @@ class CartController
     private $CartModel;
     private $BaseModel;
     private $ProductModel;
+    private $CategoryModel;
 
     public function __construct()
     {
         $this->ProductModel = new ProductModel();
         $this->CartModel = new CartModel();
         $this->BaseModel = new BaseModel();
+        $this->CategoryModel = new CategoryModel();
     }
 
     public function list()
@@ -41,6 +44,9 @@ class CartController
             $list_carts = $cartData['list_carts'];
             $count_carts = $cartData['count_carts'];
         }
+
+        // Lấy danh sách danh mục
+        $categories = $this->CategoryModel->select_name_categories();  
 
         require_once "views/cart.php";
     }

@@ -4,6 +4,10 @@
 .shop-cart {
     padding-top: 70px;
     padding-bottom: 90px;
+
+    .col-lg-4{
+        padding-right: calc(15px - 15px);
+    }
 }
 
 .shop__cart__table {
@@ -11,6 +15,7 @@
 
     table {
         width: 100%;
+        float: left;
     }
 
     thead {
@@ -203,6 +208,9 @@
 .cart__total__procced {
     background: #f5f5f5;
     padding: 40px;
+    width: 90%;
+    float: right;
+    margin-top: 0;
 
     h6 {
         color: $heading-color;
