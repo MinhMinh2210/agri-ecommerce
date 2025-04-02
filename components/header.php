@@ -74,7 +74,7 @@
                                 <ul class="dropdown">
 
                                     <li><a href="cart">Giỏ hàng</a></li>
-                                    <li><a href="thanh-toan">Thanh toán</a></li>
+                                    <li><a href="checkout">Thanh toán</a></li>
                                     <li><a href="order">Đơn mua</a></li>
                                 </ul>
                             </li>

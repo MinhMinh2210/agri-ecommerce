@@ -5,7 +5,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="index.php"><i class="fa fa-home"></i> Trang chủ</a>
-                        <a href="index.php?url=shop"> Cửa hàng</a>
+                        <a href="shop"> Cửa hàng</a>
                         <span>Giỏ hàng</span>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                                                 </td>
                                                 <td class="cart__total"><?= number_format($totalPrice) ?>đ</td>
                                                 <td class="cart__close">
-                                                    <a href="index.php?url=cart&xoa=<?= $cart_id ?>">
+                                                    <a href="cart&xoa=<?= $cart_id ?>">
                                                         <span class="icon_close"></span>
                                                     </a>
                                                 </td>
@@ -100,7 +100,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="cart__btn">
-                                <a href="index.php?url=shop">Tiếp tục mua sắm</a>
+                                <a href="shop">Tiếp tục mua sắm</a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -130,8 +130,8 @@
                                 <!-- Tổng thanh toán -->
                                 <li>Tổng <span><?= number_format($totalPayment) ?>đ</span></li>
                             </ul>
-                            <a href="index.php?url=thanh-toan" class="primary-btn">THANH TOÁN COD</a>
-                            <a href="thanh-toan-momo" class="btn-momo primary-btn mt-3">THANH TOÁN MOMO</a>
+                            <a href="checkout" class="primary-btn">THANH TOÁN</a>
+                            <!-- <a href="checkout-momo" class="btn-momo primary-btn mt-3">THANH TOÁN MOMO</a> -->
                         </div>
                     </div>
                 </div>

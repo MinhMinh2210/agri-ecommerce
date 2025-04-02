@@ -190,7 +190,7 @@ if (isset($_SESSION['user'])) {
                             <div class="col-lg-12">
                                 <div class="cart__btn">
                                     <input type="submit" name="update_profile" value="Cập nhật">
-                                    <a class="ml-2" href="thanh-toan">Đến trang thanh toán</a>
+                                    <a class="ml-2" href="checkout">Đến trang thanh toán</a>
                                 </div>
                             </div>
 

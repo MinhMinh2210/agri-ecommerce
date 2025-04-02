@@ -81,7 +81,7 @@ if (isset($_SESSION['user'])) {
                             </div>
                             <div class="col-lg-5">
                                 <div class="cart__btn">
-                                    <a href="thanh-toan-2">Nhập địa chỉ mới</a>
+                                    <a href="checkout-2">Nhập địa chỉ mới</a>
                                 </div>
                             </div>
 
@@ -143,11 +143,11 @@ if (isset($_SESSION['user'])) {
                                 <div class="checkout__order__widget text-center text-dark mb-2">
                                     Thanh toán khi nhận hàng
                                 </div>
-                                <button type="button" class="site-btn" data-toggle="modal" data-target="#thanh-toan-1">
+                                <button type="button" class="site-btn" data-toggle="modal" data-target="#checkout-1">
                                     ĐẶT HÀNG
                                 </button>
                                 <!-- Modal thanh toán-->
-                                <div class="modal fade" id="thanh-toan-1" tabindex="-1" role="dialog" aria-labelledby="thanh-toan-1" aria-hidden="true">
+                                <div class="modal fade" id="checkout-1" tabindex="-1" role="dialog" aria-labelledby="checkout-1" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">

@@ -188,7 +188,7 @@ if (isset($_SESSION['user'])) {
                             <div class="col-lg-12">
                                 <div class="cart__btn">
                                     <input type="submit" name="change_password" value="Thay đổi">
-                                    <a class="ml-2" href="thanh-toan">Đến trang thanh toán</a>
+                                    <a class="ml-2" href="checkout">Đến trang thanh toán</a>
                                 </div>
                             </div>
 

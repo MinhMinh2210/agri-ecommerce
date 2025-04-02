@@ -10,8 +10,8 @@ require_once "controllers/CartController.php";
 require_once "controllers/OrderController.php";
 require_once "controllers/AuthController.php";
 define('BASE_URL', '');
-// define('URL_MOMO', 'http://localhost/WEBNONGSAN/cam-on');
-// define('URL_ORDER', 'http://localhost/WEBNONGSAN/order');
+define('URL_MOMO', 'http://localhost/WEBNONGSAN/cam-on');
+define('URL_ORDER', 'http://localhost/WEBNONGSAN/order');
 
 require_once "components/head.php";
 require_once "components/header.php";
@@ -41,11 +41,11 @@ if (!isset($_GET['url'])) {
             $controller = new CartController();
             $controller->list();
             break;
-        case 'thanh-toan':
+        case 'checkout':
             $controller = new OrderController();
             $controller->checkout();
             break;
-        case 'thanh-toan-momo':
+        case 'checkout-momo':
             require_once "views/checkout/checkout_momo.php";
             break;
         case 'cam-on':
@@ -78,8 +78,6 @@ if (!isset($_GET['url'])) {
         case 'edit-ptofile':
             require_once "views/user/edit-profile.php";
             break;
-
-        //Bài viết
         case 'search':
             $controller = new ProductController();
             $controller->search();
