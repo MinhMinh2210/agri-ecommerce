@@ -1,10 +1,15 @@
+<?php
+$current_page = isset($_GET['quanli']) ? $_GET['quanli'] : 'index';
+
+function isActive($page, $current_page) {
+    return $page == $current_page ? 'active text-success' : 'text-dark';
+}
+?>
+
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <!-- <a href="index.php" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-success"><i class="fa fa fa-user me-2"></i> Trang quản lý</h3>
-                </a> -->
                 <a href="index.php" class="navbar-brand mx-4 mb-3">
                     <img src="public_admin/img/logo.png" alt="logo">
                 </a>
@@ -18,54 +23,37 @@
                         <span>Admin</span>
                     </div>
                 </div> -->
+
+                <!-- SIDE BAR -->
                 <div class="navbar-nav w-100">
-                    <a href="index.php" class="nav-item nav-link active text-success"><i class="fa fa-tachometer-alt me-2 text-success"></i>Trang chủ</a>
+                    <a href="index.php" class="nav-item nav-link <?= $current_page == 'index' ? 'active text-success' : 'text-dark' ?>">
+                        <i class="fa fa-tachometer-alt me-2"></i>Trang chủ
+                    </a>
+                    <a href="index.php?quanli=danh-sach-don-hang" class="nav-item nav-link <?= isActive('danh-sach-don-hang', $current_page) ?>">
+                        <i class="fa fa-shopping-basket me-2"></i>Đơn hàng
+                    </a>
+                    <a href="index.php?quanli=danh-sach-danh-muc" class="nav-item nav-link <?= isActive('danh-sach-danh-muc', $current_page) ?>">
+                        <i class="fa fa-th me-2"></i>Danh mục
+                    </a>
+                    <a href="index.php?quanli=danh-sach-san-pham" class="nav-item nav-link <?= isActive('danh-sach-san-pham', $current_page) ?>">
+                        <i class="fas fa-box me-2"></i>Sản phẩm
+                    </a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown"><i class="fa fa-shopping-basket me-2 text-dark"></i>Đơn hàng</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="index.php?quanli=danh-sach-order" class="dropdown-item">Tất cả đơn</a>
-                            <a href="danh-sach-don-cho" class="dropdown-item">Đơn chờ xác nhận</a>
-                        </div>
-                    </div>
-
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown"><i class="fa fa-th me-2 text-dark"></i>Danh mục</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="index.php?quanli=them-danh-muc" class="dropdown-item">Thêm mới</a>
-                            <a href="index.php?quanli=danh-sach-danh-muc" class="dropdown-item">Tất cả</a>
-
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown"><i class="fas fa-box me-2 text-dark"></i>Sản phẩm</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="index.php?quanli=them-san-pham" class="dropdown-item">Thêm mới</a>
-                            <a href="index.php?quanli=danh-sach-san-pham" class="dropdown-item">Tất cả</a>
-
-                        </div>
-                    </div>
-                    <!-- <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-book me-2"></i> Bài viết</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="index.php?quanli=danh-sach-bai-viet" class="dropdown-item">Tất cả</a>
-                            <a href="index.php?quanli=them-bai-viet" class="dropdown-item">Thêm bài viết</a>
-                            <a href="index.php?quanli=danh-muc-bai-viet" class="dropdown-item">Chuyên mục</a>
-
-                        </div>
-                    </div> -->
-
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown"><i class="fas fa-chart-bar me-2 text-dark"></i> Thống kê</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fas fa-chart-bar me-2"></i> Thống kê
+                        </a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="thong-ke-san-pham" class="dropdown-item">Sản phẩm - danh mục</a>
-                            <a href="thong-ke-order" class="dropdown-item">Đơn hàng</a>
-
+                            <a href="thong-ke-don-hang" class="dropdown-item">Đơn hàng</a>
                         </div>
                     </div>
-
-                    <a href="index.php?quanli=danh-sach-khach-hang" class="nav-item nav-link text-dark"><i class="fas fa-users me-2 text-dark"></i>Thành viên</a>
-                    <a href="index.php?quanli=binh-luan" class="nav-item nav-link text-dark"><i class="fas fa-comment me-2 text-dark"></i>Bình luận</a>
-
+                    <a href="index.php?quanli=danh-sach-khach-hang" class="nav-item nav-link <?= isActive('danh-sach-khach-hang', $current_page) ?>">
+                        <i class="fas fa-users me-2"></i>Thành viên
+                    </a>
+                    <a href="index.php?quanli=binh-luan" class="nav-item nav-link <?= isActive('binh-luan', $current_page) ?>">
+                        <i class="fas fa-comment me-2"></i>Bình luận
+                    </a>
+                </div>
 
 
 
@@ -78,7 +66,7 @@
                             <a href="blank.html" class="dropdown-item">Blank Page</a>
                         </div>
                     </div> -->
-                </div>
+                
             </nav>
         </div>
         <!-- Sidebar End -->
@@ -137,7 +125,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-white border-1 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Hồ sơ</a>
-                            <a href="index.php?quanli=log-out" class="dropdown-item">Đăng xuất</a>
+                            <a href="index.php?quanli=dang-xuat" class="dropdown-item">Đăng xuất</a>
                         </div>
                     </div>
                 </div>
