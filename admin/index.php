@@ -64,7 +64,7 @@ if (!isset($_GET['quanli'])) {
             break;
 
         // Order management
-        case 'danh-sach-don-hang':
+        case 'danh-sach-order':
             $controller = new OrderController();
             $controller->list();
             break;
@@ -72,13 +72,13 @@ if (!isset($_GET['quanli'])) {
             $controller = new OrderController();
             $controller->unconfirmed();
             break;
-        case 'cap-nhat-don-hang':
+        case 'cap-nhat-order':
             $controller = new OrderController();
             $controller->edit();
             break;
 
         // Customer and account management
-        case 'dang-xuat':
+        case 'log-out':
             unset($_SESSION['user_admin']);
             header("Location: login.php");
             break;
@@ -103,7 +103,7 @@ if (!isset($_GET['quanli'])) {
         case 'thong-ke-san-pham':
             require_once "statistic/products.php";
             break;
-        case 'thong-ke-don-hang':
+        case 'thong-ke-order':
             require_once "statistic/orders.php";
             break;
         case 'bieu-do-luot-ban':

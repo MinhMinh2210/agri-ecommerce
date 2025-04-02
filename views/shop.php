@@ -1,5 +1,3 @@
-
-
 <!-- Breadcrumb Begin -->
 <div class="breadcrumb-option">
     <div class="container">
@@ -32,7 +30,7 @@
                                 ?>
                                     <div class="card">
                                         <div class="card-heading active">
-                                            <a href="index.php?url=danh-muc-san-pham&id=<?= $category_id ?>"><?= $name ?></a>
+                                            <a href="category&id=<?= $category_id ?>"><?= $name ?></a>
                                         </div>
 
                                     </div>
@@ -87,13 +85,13 @@
                                     <ul class="product__hover">
                                         <li><a href="upload/<?= $image ?>" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li>
-                                            <a href="index.php?url=chitietsanpham&id_sp=<?= $product_id ?>&id_dm=<?= $category_id ?>"><span class="icon_search_alt"></span></a>
+                                            <a href="productdetail&id_sp=<?= $product_id ?>&id_dm=<?= $category_id ?>"><span class="icon_search_alt"></span></a>
                                         </li>
 
 
                                         <li>
                                             <?php if (isset($_SESSION['user'])) { ?>
-                                                <form action="index.php?url=cart" method="post">
+                                                <form action="cart" method="post">
                                                     <input value="<?= $product_id ?>" type="hidden" name="product_id">
                                                     <input value="<?= $_SESSION['user']['id'] ?>" type="hidden" name="user_id">
                                                     <input value="<?= $name ?>" type="hidden" name="name">
@@ -108,7 +106,7 @@
                                                 </form>
                                             <?php } else { ?>
                                                 <button type="submit" onclick="alert('Vui lòng dăng nhập để thực hiện chức năng');" name="add_to_cart" id="toastr-success-top-right">
-                                                    <a href="dang-nhap"><span class="icon_bag_alt"></span></a>
+                                                    <a href="login"><span class="icon_bag_alt"></span></a>
                                                 </button>
                                             <?php } ?>
                                         </li>
@@ -147,20 +145,20 @@
                         }
 
                         $html_pagination .= '
-                                    <a class="' . $active . '" href="index.php?url=shop&page=' . $i . '">' . $i . '</a>
+                                    <a class="' . $active . '" href="shop&page=' . $i . '">' . $i . '</a>
                                 ';
 
                         //  Next
                         if ($currentPage < $numberOfPages) {
                             $pagination_next = '
-                                        <a href="index.php?url=shop&page=' . ($currentPage + 1) . '"><i class="fa fa-angle-right"></i></a>
+                                        <a href="shop&page=' . ($currentPage + 1) . '"><i class="fa fa-angle-right"></i></a>
                                     ';
                         }
 
                         //  Prev
                         if ($currentPage > 1) {
                             $pagination_prev = '
-                                        <a href="index.php?url=shop&page=' . ($currentPage - 1) . '"><i class="fa fa-angle-left"></i></a>
+                                        <a href="shop&page=' . ($currentPage - 1) . '"><i class="fa fa-angle-left"></i></a>
                                     ';
                         }
                     }

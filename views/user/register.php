@@ -1,6 +1,4 @@
-
 <style>
-
     label {
         margin-top: 5px;
     }
@@ -9,20 +7,20 @@
 <div class="container my-5">
     <div class="row d-flex justify-content-center align-items-center m-0">
         <div class="login_oueter">
-            
+
             <form action="" method="post" id="login" autocomplete="off" class="p-3">
                 <h4 class="my-3 text-center">ĐĂNG KÝ TÀI KHOẢN</h4>
                 <div class="form-row">
-                    
+
                     <div class="col-12">
-                        
+
                         <div class="input-group mb-0">
                             <label class="w-100 text-dark" for="email_res">Địa chỉ Email</label>
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
                             </div>
-                            <input name="email_register" type="email" value="<?=$email_tmp?>" class="input form-control" id="email_res" required="true"  placeholder="Email" />
-                            <span class="w-100 text-danger"><?=$error['email']?></span>
+                            <input name="email_register" type="email" value="<?= $email_tmp ?>" class="input form-control" id="email_res" required="true" placeholder="Email" />
+                            <span class="w-100 text-danger"><?= $error['email'] ?></span>
                         </div>
                     </div>
                     <div class="col-12">
@@ -31,8 +29,8 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
                             </div>
-                            <input name="full_name" type="text" value="<?=$fullname_tmp?>" class="input form-control" id="full_name" required="true"  placeholder="Họ và tên" />
-                            <span class="w-100 text-danger"><?=$error['fullname']?></span>
+                            <input name="full_name" type="text" value="<?= $fullname_tmp ?>" class="input form-control" id="full_name" required="true" placeholder="Họ và tên" />
+                            <span class="w-100 text-danger"><?= $error['fullname'] ?></span>
                         </div>
                     </div>
                     <div class="col-12">
@@ -41,8 +39,8 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
                             </div>
-                            <input name="username" type="text" value="<?=$username_tmp?>" class="input form-control" id="username" required="true"  placeholder="Tên đăng nhập" />
-                            <span class="w-100 text-danger"><?=$error['username']?></span>
+                            <input name="username" type="text" value="<?= $username_tmp ?>" class="input form-control" id="username" required="true" placeholder="Tên đăng nhập" />
+                            <span class="w-100 text-danger"><?= $error['username'] ?></span>
                         </div>
                     </div>
                     <div class="col-12">
@@ -51,23 +49,23 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
                             </div>
-                            <input name="password" type="password" value="<?=$password_tmp?>" class="input form-control" id="password_register" placeholder="Mật khẩu" required="true" aria-label="password" aria-describedby="basic-addon1" />
-                            
+                            <input name="password" type="password" value="<?= $password_tmp ?>" class="input form-control" id="password_register" placeholder="Mật khẩu" required="true" aria-label="password" aria-describedby="basic-addon1" />
+
                             <div class="input-group-append">
                                 <span class="input-group-text" onclick="password_show_hide_register();">
                                     <i class="fas fa-eye" id="show_eye_register"></i>
                                     <i class="fas fa-eye-slash d-none" id="hide_eye_register"></i>
                                 </span>
                             </div>
-                            <span class="w-100 text-danger"><?=$error['password']?></span>
+                            <span class="w-100 text-danger"><?= $error['password'] ?></span>
                         </div>
                         <div class="input-group my-0">
                             <label class="w-100 text-dark" for="password_confirm">Nhập lại mật khẩu</label>
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-check"></i></span>
                             </div>
-                            <input name="password_confirm" type="password" value="<?=$password_cf_tmp?>" class="input form-control" id="password_confirm" placeholder="Xác nhận mật khẩu" required />
-                            <span class="w-100 text-danger"><?=$error['password_confirm']?></span>
+                            <input name="password_confirm" type="password" value="<?= $password_cf_tmp ?>" class="input form-control" id="password_confirm" placeholder="Xác nhận mật khẩu" required />
+                            <span class="w-100 text-danger"><?= $error['password_confirm'] ?></span>
                         </div>
                     </div>
                     <div class="col-12">
@@ -76,8 +74,8 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone"></i></span>
                             </div>
-                            <input name="phone" type="text" value="<?=$phone_tmp?>" class="input form-control" id="phone" placeholder="Số điện thoại" required />
-                            <span class="w-100 text-danger"><?=$error['phone']?></span>
+                            <input name="phone" type="text" value="<?= $phone_tmp ?>" class="input form-control" id="phone" placeholder="Số điện thoại" required />
+                            <span class="w-100 text-danger"><?= $error['phone'] ?></span>
                         </div>
                     </div>
                     <div class="col-12">
@@ -86,8 +84,8 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker"></i></span>
                             </div>
-                            <input name="address" type="text" value="<?=$address_tmp?>" class="input form-control" id="address" placeholder="Địa chỉ" required/>
-                            <span class="w-100 text-danger"><?=$error['address']?></span>
+                            <input name="address" type="text" value="<?= $address_tmp ?>" class="input form-control" id="address" placeholder="Địa chỉ" required />
+                            <span class="w-100 text-danger"><?= $error['address'] ?></span>
                         </div>
                     </div>
 
@@ -101,11 +99,11 @@
                 </div>
                 <div class="col-12 line"></div>
                 <div class="col-12 text-center">
-                    <a href="index.php?url=dang-nhap" class="btn btn-success w-50">Đăng nhập</a>
+                    <a href="login" class="btn btn-success w-50">Đăng nhập</a>
                 </div>
             </form>
         </div>
-    </div>  
+    </div>
 </div>
 
 <script>

@@ -8,9 +8,9 @@ class CartController
     private $CartModel;
     private $BaseModel;
     private $ProductModel;
-    
+
     public function __construct()
-    {   
+    {
         $this->ProductModel = new ProductModel();
         $this->CartModel = new CartModel();
         $this->BaseModel = new BaseModel();
@@ -65,7 +65,7 @@ class CartController
             $this->CartModel->insert_cart($product_id, $user_id, $product_name, $product_price, $product_quantity, $product_image);
             $_SESSION['success'] = "Đã thêm sản phẩm vào giỏ hàng";
         }
-        header("Location: index.php?url=cart");
+        header("Location: cart");
         exit();
     }
 
@@ -89,7 +89,7 @@ class CartController
         }
 
         $_SESSION['success'] = ($index > 0) ? 'Đã xóa ' . $index . ' sản phẩm ra khỏi giỏ hàng' : 'Cập nhật thành công';
-        header("Location: index.php?url=cart");
+        header("Location: cart");
         exit();
     }
 
@@ -98,7 +98,7 @@ class CartController
         $cart_id = $_GET['xoa'];
         $this->CartModel->delete_cart_by_id($cart_id);
         $_SESSION['success'] = 'Đã xóa 1 sản phẩm';
-        header("Location: index.php?url=cart");
+        header("Location: cart");
         exit();
     }
 

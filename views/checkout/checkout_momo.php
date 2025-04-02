@@ -243,7 +243,7 @@ if (isset($_SESSION['user'])) {
                 <div class="row rounded justify-content-center mx-0 pt-5">
                     <div class="col-md-6 text-center">
                         <h4 class="mb-4">Vui lòng đăng nhập để có thể thanh toán</h4>
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="index.php?url=dang-nhap">Đăng nhập</a>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="login">Đăng nhập</a>
                         <a class="btn btn-secondary rounded-pill py-3 px-5" href="index.php">Trang chủ</a>
                     </div>
                 </div>

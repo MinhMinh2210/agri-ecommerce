@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-12 line"></div>
                 <div class="col-12 text-center">
-                    <a href="index.php?url=dang-ky" class="btn btn-success w-50">Tạo tài khoản</a>
+                    <a href="register" class="btn btn-success w-50">Tạo tài khoản</a>
                 </div>
             </form>
         </div>

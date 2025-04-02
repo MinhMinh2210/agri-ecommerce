@@ -104,7 +104,7 @@ class AuthController
                     'password' => $password
                 ];
 
-                header("Location: index.php?url=dang-nhap");
+                header("Location: login");
                 exit();
             } else {
                 $email_tmp = $email;

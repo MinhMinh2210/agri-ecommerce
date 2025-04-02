@@ -9,7 +9,7 @@ if (isset($_SESSION['user'])) {
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="index.php"><i class="fa fa-home"></i> Trang chủ</a>
-                        <a href="index.php?url=thong-tin-tai-khoan">Tài khoản</a>
+                        <a href="user-infor">Tài khoản</a>
                         <span>Đơn mua</span>
                     </div>
                 </div>
@@ -77,7 +77,7 @@ if (isset($_SESSION['user'])) {
                         <div class="float-right">
                             <span class="text-dark">Thành tiền: </span>
                             <span style="font-weight: 600;" class="text-danger mr-3"><?= number_format($total) ?>₫</span>
-                            <a href="index.php?url=chi-tiet-don-hang&id=<?= $order_id ?>" class="btn btn-custom"> Xem chi tiết</a>
+                            <a href="orderdetail&id=<?= $order_id ?>" class="btn btn-custom"> Xem chi tiết</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@ if (isset($_SESSION['user'])) {
                 <div class="row rounded justify-content-center mx-0 pt-5">
                     <div class="col-md-6 text-center">
                         <h4 class="mb-4">Vui lòng đăng nhập để có thể sử dụng chức năng</h4>
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="index.php?url=dang-nhap">Đăng nhập</a>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="login">Đăng nhập</a>
                         <a class="btn btn-secondary rounded-pill py-3 px-5" href="index.php">Trang chủ</a>
                     </div>
                 </div>

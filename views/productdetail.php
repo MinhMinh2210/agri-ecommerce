@@ -5,8 +5,8 @@
             <div class="col-lg-12">
                 <div class="breadcrumb__links">
                     <a href="index.php"><i class="fa fa-home"></i> Trang chủ</a>
-                    <a href="index.php?url=cua-hang">Sản phẩm </a>
-                    <a href="index.php?url=danh-muc-san-pham&id=<?= $id_danhmuc ?>">
+                    <a href="cua-hang">Sản phẩm </a>
+                    <a href="category&id=<?= $id_danhmuc ?>">
                         <?php foreach ($name_catgoty as $value) {
                             if ($value['category_id'] == $id_danhmuc) {
                                 echo $value['name'];
@@ -83,7 +83,7 @@
                     <div class="product__details__button">
 
                         <?php if (isset($_SESSION['user'])) { ?>
-                            <form action="index.php?url=cart" method="post">
+                            <form action="cart" method="post">
                                 <div class="input-group d-flex align-items-center">
                                     <span class="text-dark">Số lượng</span>
                                     <div class="input-next-cart d-flex mx-4">
@@ -122,10 +122,10 @@
                             </div>
                             <div class="quantity">
                                 <button name="add_to_cart" onclick="alert('Vui lòng dăng nhập để thực hiện chức năng');" style="border: none;" type="submit" class="cart-btn btn-primary">
-                                    <span class="icon_bag_alt"></span> <a href="dang-nhap" style="color: #ffffff;">Thêm vào giỏ</a>
+                                    <span class="icon_bag_alt"></span> <a href="login" style="color: #ffffff;">Thêm vào giỏ</a>
                                 </button>
                                 <button name="add_to_cart" onclick="alert('Vui lòng dăng nhập để thực hiện chức năng');" type="submit" style="background-color: #ca1515; border: none;" class="cart-btn">
-                                    <span class="icon_bag_alt"></span> <a href="dang-nhap" style="color: #ffffff;">Mua ngay</a>
+                                    <span class="icon_bag_alt"></span> <a href="login" style="color: #ffffff;">Mua ngay</a>
                                 </button>
                             </div>
                         <?php } ?>
@@ -183,7 +183,7 @@
                             <ul class="product__hover">
                                 <li><a href="upload/<?= $image ?> " class="image-popup"><span class="arrow_expand"></span></a></li>
                                 <li>
-                                    <a href="index.php?url=chitietsanpham&id_sp=<?= $product_id ?>&id_dm=<?= $category_id ?>"><span class="icon_search_alt"></span></a>
+                                    <a href="productdetail&id_sp=<?= $product_id ?>&id_dm=<?= $category_id ?>"><span class="icon_search_alt"></span></a>
                                 </li>
 
                                 <li>
@@ -205,7 +205,7 @@
                         </div>
                         <div class="product__item__text">
                             <h6 class="text-truncate-1">
-                                <a href="index.php?url=chitietsanpham&id_sp=<?= $product_id ?>&id_dm=<?= $category_id ?>">
+                                <a href="productdetail&id_sp=<?= $product_id ?>&id_dm=<?= $category_id ?>">
                                     <?= $name ?>
                                 </a>
                             </h6>

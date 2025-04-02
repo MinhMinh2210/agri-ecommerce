@@ -7,7 +7,7 @@
         </div>
         <div class="text-center">
             <h3 class="mb-4">Cảm ơn quý khách hàng đã ủng hộ VegetaBox !</h3>
-            <a href="don-hang" class="btn btn-success">Xem đơn hàng</a>
+            <a href="order" class="btn btn-success">Xem đơn hàng</a>
         </div>
     </div>
 </div>

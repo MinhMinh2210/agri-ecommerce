@@ -1,4 +1,3 @@
-
 <footer class="footer">
     <div class="container">
         <div class="row">
@@ -9,7 +8,7 @@
                     </div>
                     <p>Thu Duc City, Ho Chi Minh City</p>
                     <p>+84 353 13 7872</p>
-                    
+
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-5 order-4">
@@ -44,7 +43,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </footer>
 <!-- Footer Section End -->
@@ -53,7 +52,7 @@
 <div class="search-model">
     <div class="h-100 d-flex align-items-center justify-content-center">
         <div class="search-close-switch">+</div>
-        <form action="tim-kiem" method="get" class="search-model-form">
+        <form action="search" method="get" class="search-model-form">
             <input type="search" name="query" id="search-input" placeholder="TÌM KIẾM.....">
         </form>
     </div>
@@ -62,8 +61,8 @@
 
 <!-- Toatr -->
 <script>
-    $(document).ready(function () {
-        $("#toastr-success-top-right").on("click", function () {
+    $(document).ready(function() {
+        $("#toastr-success-top-right").on("click", function() {
             toastr.success("Đã thêm vào giỏ hàng", "Thành công", {
                 closeButton: true,
                 debug: false,
@@ -100,13 +99,10 @@
 <!-- dialogflow -->
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 <df-messenger
-class="z-20"
     intent="WELCOME"
-    chat-title="Chat"
-    agent-id="a111a74a-8334-4098-9636-0f1433d6fc97"
-    language-code="vi"
-></df-messenger>
-
+    chat-title="NongSanChatbot"
+    agent-id="c8356ff6-bb20-44e1-93fe-9e0db7d0ec8b"
+    language-code="vi"></df-messenger>
 
 </body>
 

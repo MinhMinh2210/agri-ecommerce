@@ -1,5 +1,3 @@
-
-
 <!-- Banner Section Begin -->
 <div class="row mt-5" style="width: 95%; margin: 0 auto;">
     <div class=" col-sm-12">
@@ -41,14 +39,14 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="services__item">
-                <i class="fa-solid fa-phone-volume"></i>
+                    <i class="fa-solid fa-phone-volume"></i>
                     <h6>Hỏi gì cũng trả lời</h6>
                     <p>Hỗ trợ bởi công nghệ</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="services__item">
-                <i class="fa-solid fa-comments-dollar"></i>
+                    <i class="fa-solid fa-comments-dollar"></i>
                     <h6>Giao dịch nhanh chóng</h6>
                     <p>Thanh toán an toàn 100%</p>
                 </div>
@@ -83,7 +81,7 @@
                 $discount_percentage = $this->ProductModel->discount_percentage($price, $sale_price);
             ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix sach-1">
-                    <a href="index.php?url=chitietsanpham&id_sp=<?= $product_id ?>&id_dm=<?= $category_id ?>">
+                    <a href="productdetail&id_sp=<?= $product_id ?>&id_dm=<?= $category_id ?>">
 
                         <div class="product__item sale">
                             <div class="product__item__pic set-bg" data-setbg="upload/<?= $image ?>">
@@ -112,7 +110,7 @@
 
 
             <div class="col-lg-12 text-center mb-4">
-                <a href="index.php?url=shop" class="btn btn-outline-success">Xem thêm</a>
+                <a href="shop" class="btn btn-outline-success">Xem thêm</a>
             </div>
         </div>
 
@@ -126,7 +124,7 @@
         <div class="row g-1 mb-4 mt-2 pb-4 justify-content-center">
             <?php foreach ($listCategories as $value) {
                 extract($value);
-                $link = 'index.php?url=danh-muc-san-pham&id=' . $category_id;
+                $link = 'category&id=' . $category_id;
             ?>
                 <div class="col-lg-2 col-md-3 col-sm-6 text-center p-1 cate-gory">
                     <a href="<?= $link ?>"><img style="width: 50%;" src="upload/<?= $image ?>" alt=""></a>

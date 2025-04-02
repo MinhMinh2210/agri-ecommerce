@@ -2,7 +2,8 @@
 require_once "./models_admin/OrderModel.php";
 require_once "./models_admin/BaseModel.php";
 
-class OrderController {
+class OrderController
+{
     // Models
     private $OrderModel;
     private $BaseModel;
@@ -38,7 +39,7 @@ class OrderController {
         foreach ($order_details as $value) {
             extract($value);
         }
-        
+
         // Trang thái đơn hàng
         $order_status = 'Chưa xác nhận';
         if ($status == 2) {
@@ -48,17 +49,16 @@ class OrderController {
         } elseif ($status == 4) {
             $order_status = 'Giao thành công';
         }
-        
+
         $date_formated = $this->BaseModel->date_format($order_date, '');
-        
+
         // Cập nhật trạng thái
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])) {
             $status = $_POST["status"];
             $order_id = $_POST["order_id"];
             $this->OrderModel->update_status_order($status, $order_id);
-            header("Location: index.php?quanli=cap-nhat-don-hang&id=$order_id");
-        }        
+            header("Location: index.php?quanli=cap-nhat-order&id=$order_id");
+        }
         require_once "order/edit.php";
     }
 }
-?>

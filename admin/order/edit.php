@@ -2,7 +2,7 @@
     <article class="card">
         <header class="card-header text-dark">
             <h6>
-                <a href="index.php?quanli=danh-sach-don-hang" class="link-not-hover text-success">Đơn hàng</a>
+                <a href="index.php?quanli=danh-sach-order" class="link-not-hover text-success">Đơn hàng</a>
                 / Chi tiết đơn hàng
             </h6>
         </header>

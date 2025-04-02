@@ -1,5 +1,3 @@
-
-
 <!-- LIST PRODUCTS -->
 <div class="container-fluid pt-4 px-4">
     <div class="bg-light text-center rounded p-4">
@@ -71,7 +69,7 @@
                                         <i class="bi bi-three-dots-vertical text-dark"></i>
                                     </a>
                                     <div class="dropdown-menu p-0">
-                                        <a class="dropdown-item" href="../index.php?url=chitietsanpham&id_sp=<?= $value['product_id'] ?>&id_dm=<?= $value['category_id'] ?>" target="_blank">
+                                        <a class="dropdown-item" href="../productdetail&id_sp=<?= $value['product_id'] ?>&id_dm=<?= $value['category_id'] ?>" target="_blank">
                                             Xem
                                         </a>
                                         <a class="dropdown-item" href="index.php?quanli=cap-nhat-san-pham&id=<?= $value['product_id'] ?>">Sửa</a>

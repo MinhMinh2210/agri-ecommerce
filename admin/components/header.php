@@ -23,7 +23,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown"><i class="fa fa-shopping-basket me-2 text-dark"></i>Đơn hàng</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="index.php?quanli=danh-sach-don-hang" class="dropdown-item">Tất cả đơn</a>
+                            <a href="index.php?quanli=danh-sach-order" class="dropdown-item">Tất cả đơn</a>
                             <a href="danh-sach-don-cho" class="dropdown-item">Đơn chờ xác nhận</a>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                         <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown"><i class="fas fa-chart-bar me-2 text-dark"></i> Thống kê</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="thong-ke-san-pham" class="dropdown-item">Sản phẩm - danh mục</a>
-                            <a href="thong-ke-don-hang" class="dropdown-item">Đơn hàng</a>
+                            <a href="thong-ke-order" class="dropdown-item">Đơn hàng</a>
 
                         </div>
                     </div>
@@ -137,7 +137,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-white border-1 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Hồ sơ</a>
-                            <a href="index.php?quanli=dang-xuat" class="dropdown-item">Đăng xuất</a>
+                            <a href="index.php?quanli=log-out" class="dropdown-item">Đăng xuất</a>
                         </div>
                     </div>
                 </div>

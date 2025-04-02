@@ -1,4 +1,3 @@
-
 <?php if (isset($_SESSION['user'])) { ?>
     <div class="breadcrumb-option">
         <div class="container">
@@ -49,12 +48,12 @@
                                         ?>
                                             <tr>
                                                 <td class="cart__product__item">
-                                                    <a href="chitietsanpham&id_sp=<?= $product_id ?>&id_dm=<?= $product['category_id'] ?>">
+                                                    <a href="productdetail&id_sp=<?= $product_id ?>&id_dm=<?= $product['category_id'] ?>">
                                                         <img src="upload/<?= $product_image ?>" alt="">
                                                     </a>
                                                     <div class="cart__product__item__title">
                                                         <h6 class="text-truncate-1">
-                                                            <a href="chitietsanpham&id_sp=<?= $product_id ?>&id_dm=<?= $product['category_id'] ?>" class="text-dark">
+                                                            <a href="productdetail&id_sp=<?= $product_id ?>&id_dm=<?= $product['category_id'] ?>" class="text-dark">
                                                                 <?= $product_name ?>
                                                             </a>
                                                         </h6>
@@ -162,7 +161,7 @@
                 <div class="row rounded justify-content-center mx-0 pt-5">
                     <div class="col-md-6 text-center">
                         <h4 class="mb-4">Vui lòng đăng nhập để có thể mua hàng</h4>
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="index.php?url=dang-nhap">Đăng nhập</a>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="index.php?url=login">Đăng nhập</a>
                         <a class="btn btn-secondary rounded-pill py-3 px-5" href="index.php">Trang chủ</a>
                     </div>
                 </div>
@@ -174,13 +173,13 @@
 
 <style>
     .cart__btn a:hover {
-        background-color:rgb(9, 174, 47);
+        background-color: rgb(9, 174, 47);
         color: #fff;
         transition: 0.2s;
     }
 
     .cart__btn button:hover {
-        background-color:rgb(10, 166, 73);
+        background-color: rgb(10, 166, 73);
         color: #fff;
         transition: 0.2s;
     }

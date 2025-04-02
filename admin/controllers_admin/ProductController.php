@@ -67,7 +67,7 @@ class ProductController {
                 $pagination_next = '
                     <li class="page-item">
                         <a class="page-link text-success" href="index.php?quanli=danh-sach-san-pham&page=' . ($currentPage + 1) . '">
-                            Next <i class="fa fa-angle-right text-success"></i>
+                             <i class="fa fa-angle-right text-success"></i>
                         </a>
                     </li>
                 ';
@@ -78,7 +78,7 @@ class ProductController {
                 $pagination_prev = '
                 <li class="page-item">
                     <a class="page-link text-success" href="index.php?quanli=danh-sach-san-pham&page=' . ($currentPage - 1) . '">
-                        <i class="fa fa-angle-left text-success"></i> Prev 
+                        <i class="fa fa-angle-left text-success"></i> 
                     </a>
                 </li>
                 ';

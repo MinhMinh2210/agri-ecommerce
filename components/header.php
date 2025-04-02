@@ -31,7 +31,7 @@
 
         <?php if (isset($_SESSION['user'])) { ?>
             <div class="offcanvas__auth acount">
-                <a href="?url=thong-tin-tai-khoan">
+                <a href="?url=user-infor">
                     <img src="upload/<?= $_SESSION['user']['image'] ?>" alt=""><?= $_SESSION['user']['username'] ?>
                 </a>
             </div>
@@ -39,8 +39,8 @@
         } else {
         ?>
             <div class="offcanvas__auth">
-                <a href="?url=dang-nhap">Đăng nhập</a>
-                <a href="?url=dang-ky">Đăng ký</a>
+                <a href="?url=login">Đăng nhập</a>
+                <a href="?url=register">Đăng ký</a>
             </div>
         <?php
         }
@@ -69,17 +69,17 @@
                         <ul id="navigation">
                             <li><a href="index.php">TRANG CHỦ&nbsp;<i class="fa-solid fa-chevron-down py-2 d-inline-block" style="font-size: 11px;"></i></a></li>
 
-                            <li><a href="index.php?url=shop">Cửa hàng&nbsp;<i class="fa-solid fa-chevron-down py-2 d-inline-block" style="font-size: 11px;"></i></a></li>
+                            <li><a href="shop">Cửa hàng&nbsp;<i class="fa-solid fa-chevron-down py-2 d-inline-block" style="font-size: 11px;"></i></a></li>
                             <li><a href="#">Đặt hàng&nbsp;<i class="fa-solid fa-chevron-down py-2 d-inline-block" style="font-size: 11px;"></i></a>
                                 <ul class="dropdown">
 
-                                    <li><a href="index.php?url=cart">Giỏ hàng</a></li>
-                                    <li><a href="index.php?url=thanh-toan">Thanh toán</a></li>
-                                    <li><a href="index.php?url=don-hang">Đơn mua</a></li>
+                                    <li><a href="cart">Giỏ hàng</a></li>
+                                    <li><a href="thanh-toan">Thanh toán</a></li>
+                                    <li><a href="order">Đơn mua</a></li>
                                 </ul>
                             </li>
-                            <!-- <li><a href="index.php?url=bai-viet">Blog&nbsp;<i class="fa-solid fa-chevron-down py-2 d-inline-block" style="font-size: 11px;"></i></a></li> -->
-                            <li><a href="index.php?url=lien-he">Về chúng tôi&nbsp;<i class="fa-solid fa-chevron-down py-2 d-inline-block" style="font-size: 11px;"></i></a></li>
+                            <!-- <li><a href="bai-viet">Blog&nbsp;<i class="fa-solid fa-chevron-down py-2 d-inline-block" style="font-size: 11px;"></i></a></li> -->
+                            <li><a href="contact">Về chúng tôi&nbsp;<i class="fa-solid fa-chevron-down py-2 d-inline-block" style="font-size: 11px;"></i></a></li>
 
 
 
@@ -105,7 +105,7 @@
 
                         <?php if (isset($_SESSION['user'])) { ?>
                             <div class="header__right__auth acount">
-                                <a href="index.php?url=thong-tin-tai-khoan">
+                                <a href="user-infor">
                                     <img src="upload/<?= $_SESSION['user']['image'] ?>" alt=""><?= $_SESSION['user']['username'] ?>
                                 </a>
 
@@ -114,7 +114,7 @@
                         } else {
                         ?>
                             <div class="header__right__auth">
-                                <a href="index.php?url=dang-nhap" class="btn btn-success text-white rounded-pill px-4 py-2 mb-0 text-capitalize">Đăng nhập</a>
+                                <a href="login" class="btn btn-success text-white rounded-pill px-4 py-2 mb-0 text-capitalize">Đăng nhập</a>
                             </div>
                         <?php
                         }
