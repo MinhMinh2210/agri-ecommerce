@@ -1,7 +1,8 @@
+
 <div class="container-fluid pt-4 px-4">
     <div class="bg-light text-center rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
-            <h6 class="mb-0">Danh sách đơn hàng</h6>
+            <h6 class="mb-0">DANH SÁCH ĐƠN CHỜ XÁC NHẬN</h6>
         </div>
 
         <div class="table-responsive">
@@ -41,8 +42,8 @@
                             <td class="text-dark font-weight-bold"><?= number_format($total) ?>₫</td>
                             <td class="td-responsive-2"><?= $order_status ?></td>
                             <td class="td-responsive-2">
-                                <a class="btn btn-sm btn-success" href="index.php?quanli=cap-nhat-order&id=<?= $order_id ?>">Xem</a>
-                                <a class="btn btn-sm btn-secondary" href="index.php?quanli=cap-nhat-order&id=<?= $order_id ?>">Sửa</a>
+                                <a class="btn btn-sm btn-success" href="index.php?quanli=cap-nhat-don-hang&id=<?= $order_id ?>">Xem</a>
+                                <a class="btn btn-sm btn-secondary" href="index.php?quanli=cap-nhat-don-hang&id=<?= $order_id ?>">Sửa</a>
                             </td>
                         </tr>
                     <?php
