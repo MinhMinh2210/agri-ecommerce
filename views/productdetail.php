@@ -28,12 +28,12 @@
             <div class="col-lg-6">
                 <div class="product__details__pic">
                     <div class="product__details__pic__left product__thumb nice-scroll">
-                        <a class="pt active" href="#product-1">
+                        <!-- <a class="pt active" href="#product-1">
                             <img src="upload/<?= $image ?>" alt="">
                         </a>
                         <a class="pt" href="#product-2">
                             <img src="upload/<?= $image ?>" alt="">
-                        </a>
+                        </a> -->
                         <!-- <a class="pt" href="#product-3">
                                 <img src="img/product/conan-1.jpg" alt="">
                             </a> -->
@@ -42,8 +42,8 @@
                     <div class="product__details__slider__content">
                         <div class="product__details__pic__slider owl-carousel">
                             <img data-hash="product-1" class="product__big__img" src="upload/<?= $image ?>" alt="">
-                            <img data-hash="product-2" class="product__big__img" src="upload/<?= $image ?>" alt="">
-                            <img data-hash="product-3" class="product__big__img" src="upload/<?= $image ?>" alt="">
+                            <!-- <img data-hash="product-2" class="product__big__img" src="upload/<?= $image ?>" alt="">
+                            <img data-hash="product-3" class="product__big__img" src="upload/<?= $image ?>" alt=""> -->
 
                         </div>
                     </div>
@@ -51,23 +51,24 @@
             </div>
             <div class="col-lg-6">
                 <div class="product__details__text">
-                    <h3><?= $name ?>
-                        <span>
-                            Danh mục: <?php foreach ($name_catgoty as $value) {
-                                            if ($value['category_id'] == $id_danhmuc) {
-                                                echo $value['name'];
-                                            }
-                                        } ?>
-                        </span>
+                    <h3 class="d-flex align-items-center">
+                        <?= $name ?>
+                        <div class="rating" style="margin-left: 20px;">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
                     </h3>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <span>( <?= count($list_comments) ?> bình luận )</span>
-                    </div>
+                    <span>
+                        Danh mục: <?php foreach ($name_catgoty as $value) {
+                                        if ($value['category_id'] == $id_danhmuc) {
+                                            echo $value['name'];
+                                        }
+                                    } ?>
+                    </span>
+
                     <div class="product__details__price">
                         <?= $this->ProductModel->formatted_price($sale_price); ?>
                         <span class="ml-2">
@@ -91,7 +92,7 @@
                                         <input type="number" step="1" max="50" value="1" name="product_quantity" class="quantity-field-cart">
                                         <input type="button" value="+" class="button-plus" data-field="quantity">
                                     </div>
-                                    <span class="text-dark"><?= $quantity ?> sản phẩm có sẵn</span>
+                                    <span class="text-dark">Kho: <?= $quantity ?></span>
 
                                 </div>
 
@@ -104,9 +105,8 @@
                                 <input value="<?= $image ?>" type="hidden" name="image">
 
                                 <div class="quantity">
-
-                                    <button name="add_to_cart" style="border: none;" type="submit" class="cart-btn btn-primary"><span class="icon_bag_alt"></span> Thêm vào giỏ</button>
-                                    <button name="add_to_cart" type="submit" style="background-color: #ca1515; border: none;" class="cart-btn"><span class="icon_bag_alt"></span>Mua ngay</button>
+                                    <button name="add_to_cart" style="border: none;" type="submit" class="cart-btn btn-primary">Thêm giỏ hàng <i class="fa-solid fa-cart-plus"></i></button>
+                                    <button name="add_to_cart" type="submit" style="height: 50px;" class="btn btn-outline-success">Mua ngay <span class="icon_bag_alt"></span></button>
                                 </div>
                             </form>
                         <?php } else { ?>
@@ -117,8 +117,7 @@
                                     <input type="number" step="1" max="50" value="1" name="product_quantity" class="quantity-field-cart">
                                     <input type="button" value="+" class="button-plus" data-field="quantity">
                                 </div>
-                                <span class="text-dark"><?= $quantity ?> sản phẩm có sẵn</span>
-
+                                <span class="text-dark">Kho: <?= $quantity ?></span>
                             </div>
                             <div class="quantity">
                                 <button name="add_to_cart" onclick="alert('Vui lòng dăng nhập để thực hiện chức năng');" style="border: none;" type="submit" class="cart-btn btn-primary">
@@ -130,7 +129,7 @@
                             </div>
                         <?php } ?>
                         <ul>
-                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                            <li><a href="#" class="text-dark"><i class="fa-solid fa-heart"></i></a></li>
                             <li><a href="#"><span class="icon_adjust-horiz"></span></a></li>
                         </ul>
                     </div>

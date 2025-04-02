@@ -82,22 +82,26 @@
             ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix sach-1">
                     <a href="productdetail&id_sp=<?= $product_id ?>&id_dm=<?= $category_id ?>">
-
                         <div class="product__item sale">
                             <div class="product__item__pic set-bg" data-setbg="upload/<?= $image ?>">
                                 <!-- <div class="label sale">Sale</div> -->
                                 <div class="label_right sale">-<?= $discount_percentage ?></div>
                             </div>
-                            <div class="product__item__text">
-                                <div class="product__price"><?= number_format($sale_price) . "₫" ?> <span><?= number_format($price) . "đ" ?></span></div>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                            <div class="product__item__text d-flex justify-content-start align-items-center">
+                                <div class="flex-grow-1">
+                                    <div class="product__price"><?= number_format($sale_price) . "₫" ?> <span><?= number_format($price) . "đ" ?></span></div>
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h6 class="text-truncate-1"><a href=""><?= $name ?></a></h6>
                                 </div>
-                                <h6 class="text-truncate-1"><a href=""><?= $name ?></a></h6>
+                                <div>
+                                    <a href="#" class="btn btn-outline-success"><i class="fa fa-shopping-cart"></i></a>
+                                </div>
                             </div>
                         </div>
                     </a>
