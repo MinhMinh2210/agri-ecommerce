@@ -50,7 +50,7 @@ class OrderController
                     }
                     // Sau khi đặt hàng xóa giỏ hàng
                     $this->OrderModel->delete_cart_by_user_id($user_id);
-                    header("Location: cam-on");
+                    header("Location: ordersuccess");
                 }
             }
             require_once "views/checkout.php";
@@ -60,11 +60,13 @@ class OrderController
         }
     }
 
-    public function order_history () {
+    public function order_history()
+    {
         require_once "views/my-order.php";
     }
 
-    public function order_details () {
+    public function order_details()
+    {
         require_once "views/my-orderdetails.php";
     }
 }

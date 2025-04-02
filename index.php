@@ -48,7 +48,7 @@ if (!isset($_GET['url'])) {
         case 'checkout-momo':
             require_once "views/checkout/checkout_momo.php";
             break;
-        case 'cam-on':
+        case 'ordersuccess':
             require_once "views/thanks.php";
             break;
         case 'order':
