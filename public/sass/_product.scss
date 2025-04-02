@@ -201,7 +201,8 @@
 }
 
 .product__item__text {
-  text-align: center;
+  // text-align: center;
+  margin: 0 28px;
   padding-top: 22px;
 
   h6 {
@@ -218,7 +219,7 @@
 
     i {
       font-size: 10px;
-      color: #e3c01c;
+      color: #fc8a20 !important;
       margin-right: -4px;
 
       &:last-child {

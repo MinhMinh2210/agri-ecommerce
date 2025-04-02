@@ -37,13 +37,12 @@ if (isset($_SESSION['user'])) {
         <div class="container pt-4 mb-0">
             <article class="card">
                 <div class="card-header" style="background-color: #f9f9f9">
-                    <span class="fw-500 text-black">
-                        Trạng thái:
+                    <span class="fw-500 text-black">         
                         <span style="font-weight: 600;" class="text-danger"><?= $order_status ?></span>
                     </span>
                     <span class="float-right text-black">
                         Thời gian:
-                        <span style="font-weight: 600;" class="text-primary"><?= $date_formated ?></span>
+                        <span style="font-weight: 600;" class="text-success"><?= $date_formated ?></span>
                     </span>
                 </div>
 
@@ -61,7 +60,7 @@ if (isset($_SESSION['user'])) {
                                     <div class="aside"><img src="upload/<?= $image ?>" class="img-sm border"></div>
                                     <figcaption class="info align-self-center">
                                         <p class="title"><?= $product_name ?> </p>
-                                        <span class="text-primary"><?= number_format($product_price) ?>₫</span> <span style="font-size: 16px;" class="text-dark">x<?= $quantity ?></span>
+                                        <span class="text-success" style="font-weight: 600;"><?= number_format($product_price) ?>₫</span> <span style="font-size: 16px;" class="text-dark">x<?= $quantity ?></span>
                                     </figcaption>
                                 </figure>
                             </li>
