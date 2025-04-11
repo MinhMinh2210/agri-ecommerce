@@ -48,14 +48,21 @@
 </footer>
 <!-- Footer Section End -->
 
-<!-- Search Begin -->
-<div class="search-model">
-    <div class="h-100 d-flex align-items-center justify-content-center">
-        <div class="search-close-switch">+</div>
-        <form action="search" method="get" class="search-model-form">
-            <input type="search" name="query" id="search-input" placeholder="TÌM KIẾM.....">
+<!-- Search Modal (Popup) -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="searchModalLabel">Tìm kiếm sản phẩm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+      </div>
+      <div class="modal-body">
+        <form action="search" method="get">
+          <input type="search" class="form-control" name="query" placeholder="🔍  Nhập từ khóa tìm kiếm..." required>
         </form>
+      </div>
     </div>
+  </div>
 </div>
 <!-- Search End -->
 
@@ -98,6 +105,8 @@
 
 <!-- dialogflow -->
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <df-messenger
     intent="WELCOME"
     chat-title="NongSanChatbot"
