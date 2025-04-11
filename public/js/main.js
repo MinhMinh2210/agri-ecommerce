@@ -38,17 +38,17 @@ Created: Colorib
         var bg = $(this).data('setbg');
         $(this).css('background-image', 'url(' + bg + ')');
     });
-
-    //Search Switch
+    
+    // Mở modal khi click icon tìm kiếm
     $('.search-switch').on('click', function () {
-        $('.search-model').fadeIn(400);
+        $('#searchModal').modal('show');
     });
 
-    $('.search-close-switch').on('click', function () {
-        $('.search-model').fadeOut(400, function () {
-            $('#search-input').val('');
-        });
+    // Xóa nội dung tìm kiếm khi modal đóng
+    $('#searchModal').on('hidden.bs.modal', function () {
+        $(this).find('input[name="query"]').val('');
     });
+
 
     //Canvas Menu
     $(".canvas__open").on('click', function () {
