@@ -9,7 +9,7 @@
         <div class="col-sm-12 col-xl-9">
             <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4">
-                    <a href="index.php?quanli=danh-sach-san-pham" class="link-not-hover text-success">Sản phẩm</a>
+                    <a href="products" class="link-not-hover text-success">Sản phẩm</a>
                     / Cập nhật sản phẩm
                 </h6>
                 <?= $html_alert ?>
@@ -86,7 +86,7 @@
                 <!-- Buttons -->
                 <h6 class="mb-4">
                     <input name="update_product" type="submit" value="Cập nhật" class="btn btn-success w-100">
-                    <a href="index.php?quanli=thung-rac-san-pham&xoatam=<?= $product_id ?>" class="btn btn-danger w-100 mt-2">Xóa tạm</a>
+                    <a href="recycle-product&xoatam=<?= $product_id ?>" class="btn btn-danger w-100 mt-2">Xóa tạm</a>
                 </h6>
             </div>
         </div>

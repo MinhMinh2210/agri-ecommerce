@@ -3,7 +3,7 @@
         <div class="col-sm-12 col-xl-9">
             <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4">
-                    <a href="index.php?quanli=danh-sach-khach-hang" class="link-not-hover text-success">Tài khoản</a>
+                    <a href="users" class="link-not-hover text-success">Tài khoản</a>
                     / Thêm tài khoản
                 </h6>
                 <?= $html_alert ?>

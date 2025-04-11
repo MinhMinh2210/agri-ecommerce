@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_comment"
 if (isset($_GET['xoa']) && $_GET['xoa'] > 0) {
     $id_comment = $_GET['xoa'];
     $CommentModel->delete_comment($id_comment);
-    header("Location: index.php?quanli=binh-luan");
+    header("Location: binh-luan");
 }
 ?>
 
@@ -25,7 +25,7 @@ if (isset($_GET['xoa']) && $_GET['xoa'] > 0) {
     <article class="card">
         <header class="card-header text-dark">
             <h6>
-                <a href="index.php?quanli=binh-luan" class="link-not-hover">Bình luận</a>
+                <a href="binh-luan" class="link-not-hover">Bình luận</a>
                 / Chi tiết bình luận
             </h6>
         </header>

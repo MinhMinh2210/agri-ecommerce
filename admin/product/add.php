@@ -1,4 +1,3 @@
-
 <!-- Form Start -->
 <div class="container-fluid pt-4">
     <form class="row g-4" action="" method="post" enctype="multipart/form-data">
@@ -6,7 +5,7 @@
         <div class="col-sm-12 col-xl-9">
             <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4">
-                    <a href="index.php?quanli=danh-sach-san-pham" class="link-not-hover text-success">Sản phẩm</a>
+                    <a href="products" class="link-not-hover text-success">Sản phẩm</a>
                     / Thêm sản phẩm
                 </h6>
                 <?= $html_alert ?>

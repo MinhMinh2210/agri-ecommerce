@@ -3,14 +3,14 @@
     <div class="bg-light text-center rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Danh sách sản phẩm</h6>
-            <a href="them-san-pham" class="btn btn-success"><i class="fa fa-plus text-white"></i> Thêm sản phẩm</a>
+            <a href="add-product" class="btn btn-success"><i class="fa fa-plus text-white"></i> Thêm sản phẩm</a>
         </div>
 
         <div class="row align-items-center">
             <div class="col-lg-7 d-flex mb-3">
                 <a class="link-hover" href="">Tất cả (<?= $totalProducts ?>) </a>
                 <div class="mx-2">|</div>
-                <a class="link-not-hover text-success" href="index.php?quanli=thung-rac-san-pham">Thùng rác (<?= count($count_recycle) ?>) </a>
+                <a class="link-not-hover text-success" href="recycle-product">Thùng rác (<?= count($count_recycle) ?>) </a>
             </div>
             <form action="" method="post" class="col-lg-5 d-flex mb-3 justify-content-end">
                 <div class="form-group">
@@ -72,8 +72,8 @@
                                         <a class="dropdown-item" href="../productdetail&id_sp=<?= $value['product_id'] ?>&id_dm=<?= $value['category_id'] ?>" target="_blank">
                                             Xem
                                         </a>
-                                        <a class="dropdown-item" href="index.php?quanli=cap-nhat-san-pham&id=<?= $value['product_id'] ?>">Sửa</a>
-                                        <a class="dropdown-item text-danger" onclick="return confirmDeletionTemp();" href="index.php?quanli=thung-rac-san-pham&xoatam=<?= $value['product_id'] ?>">
+                                        <a class="dropdown-item" href="update-product&id=<?= $value['product_id'] ?>">Sửa</a>
+                                        <a class="dropdown-item text-danger" onclick="return confirmDeletionTemp();" href="recycle-product&xoatam=<?= $value['product_id'] ?>">
                                             Xóa tạm
                                         </a>
                                     </div>

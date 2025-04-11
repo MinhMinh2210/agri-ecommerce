@@ -65,11 +65,11 @@ foreach ($statistics_orders as $value) {
             Top bán chạy
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a href="top-luot-ban&top=100" class="dropdown-item">Xem tất cả</a></li>
-            <li><a href="top-luot-ban&top=5" class="dropdown-item">Top 5</a></li>
-            <li><a href="top-luot-ban&top=10" class="dropdown-item">Top 10</a></li>
-            <li><a href="top-luot-ban&top=15" class="dropdown-item">Top 15</a></li>
-            <li><a href="top-luot-ban&top=30" class="dropdown-item">Top 30</a></li>
+            <li><a href="top-orders&top=100" class="dropdown-item">Xem tất cả</a></li>
+            <li><a href="top-orders&top=5" class="dropdown-item">Top 5</a></li>
+            <li><a href="top-orders&top=10" class="dropdown-item">Top 10</a></li>
+            <li><a href="top-orders&top=15" class="dropdown-item">Top 15</a></li>
+            <li><a href="top-orders&top=30" class="dropdown-item">Top 30</a></li>
         </ul>
     </div>
 

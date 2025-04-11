@@ -57,7 +57,7 @@ class OrderController
             $status = $_POST["status"];
             $order_id = $_POST["order_id"];
             $this->OrderModel->update_status_order($status, $order_id);
-            header("Location: index.php?quanli=cap-nhat-order&id=$order_id");
+            header("Location: update-order&id=$order_id");
         }
         require_once "order/edit.php";
     }
