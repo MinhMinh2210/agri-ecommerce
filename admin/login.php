@@ -29,6 +29,17 @@
 
     <!-- Template Stylesheet -->
     <link href="public_admin/css/style.css" rel="stylesheet">
+
+    <style>
+    body {
+        font-family: 'Heebo', sans-serif;
+    }
+    .form-control {
+        height: 45px;
+        border-radius: 8px;
+    }
+</style>
+
 </head>
 
 <?php
@@ -86,32 +97,49 @@ $html_alert = $BaseModel->alert_error_success($error, '');
 
 
         <!-- Sign In Start -->
-        <div class="container-fluid">
-            <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
-                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+        <div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center" style="background-color: #d4edda;">
+        <div class="d-flex rounded shadow-lg overflow-hidden"
+            style="max-width: 800px; width: 100%; max-height: 500px; background-color: white;">
 
-
-                    <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
-
-                        <form action="" method="post">
-                            <h3 class="text-center mb-4">Đăng nhập Admin</h3>
-                            <p class="text-danger">Vui lòng đăng nhập để vào trang quản trị</p>
-                            <?= $html_alert ?>
-                            <div class="form-floating mb-3">
-                                <input name="username" type="text" class="form-control" id="floatingInput" placeholder="Tên đăng nhập" required>
-                                <label for="floatingInput">Tên đăng nhập</label>
-                            </div>
-                            <div class="form-floating mb-4">
-                                <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Mật khẩu" required>
-                                <label for="floatingPassword">Mật khẩu</label></label>
-                            </div>
-
-                            <button type="submit" name="login" class="btn btn-primary py-3 w-100 mb-4">Đăng nhập</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <!-- Cột ảnh bên trái -->
+        <div class="d-none d-md-block col-md-5 p-0">
+            <img src="public_admin/img/nongdan.jpg" alt="Login image" class="img-fluid h-100" style="object-fit: cover;">
         </div>
+
+        <!-- Form đăng nhập bên phải -->
+        <div class="col-12 col-md-7 px-5 py-5 d-flex flex-column justify-content-center" >
+            <div class="text-center mb-4">
+                <img src="public_admin/img/logo.png" alt="Logo" class="mb-2" style="width: 160px; height: auto;">
+                <p class="text-muted">Đăng nhập vào tài khoản</p>
+            </div>
+
+            <form action="" method="post">
+                <?= $html_alert ?>
+                <div class="form-group mb-4">
+                    <input name="username" type="text" class="form-control" placeholder="Tài khoản" required>
+                </div>
+                <div class="form-group mb-4">
+                    <input name="password" type="password" class="form-control" placeholder="Mật khẩu" required>
+                </div>
+                <button type="submit" name="login" class="btn btn-dark w-100 mb-3 fw-bold">LOGIN</button>
+
+                <div class="d-flex justify-content-between small mb-3">
+                    <a href="#" class="text-muted">Quên mật khẩu?</a>
+                </div>
+                <p class="text-center small">Nếu chưa có tài khoản? <a href="#" class="text-primary">Đăng ký ở đây</a></p>
+                <div class="text-center mt-4 d-flex justify-content-center gap-3">
+                    <a href="#" class="rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background-color:rgb(88, 163, 90);">
+                        <i class="fab fa-facebook-f text-white"></i>
+                    </a>
+                    <a href="#" class="rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background-color:rgb(88, 163, 90);">
+                        <i class="fas fa-envelope text-white"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
         <!-- Sign In End -->
     </div>
 
