@@ -13,24 +13,21 @@ require_once "controllers_admin/ProductController.php";
 require_once "controllers_admin/OrderController.php";
 require_once "controllers_admin/CategoryController.php";
 require_once "controllers_admin/CustomerController.php";
-require_once "models_admin/pdo_library.php";
 require_once "models_admin/BaseModel.php";
 require_once "models_admin/CategoryModel.php";
 require_once "models_admin/ProductModel.php";
 require_once "models_admin/CustomerModel.php";
 require_once "models_admin/OrderModel.php";
-require_once "models_admin/PostModel.php";
-require_once "models_admin/CommentModel.php";
 
 // Include header components
 require_once "components/head.php";
 require_once "components/header.php";
 
 // Default home page if no query parameter is set
-if (!isset($_GET['quanli'])) {
+if (!isset($_GET['url'])) {
     require_once "home.php";
 } else {
-    switch ($_GET['quanli']) {
+    switch ($_GET['url']) {
         // Product management
         case 'danh-sach-san-pham':
             $controller = new ProductController();
@@ -89,14 +86,6 @@ if (!isset($_GET['quanli'])) {
         case 'them-tai-khoan':
             $controller = new CustomerController();
             $controller->add();
-            break;
-
-        // Comment management
-        case 'binh-luan':
-            require_once "comment/list.php";
-            break;
-        case 'chi-tiet-binh-luan':
-            require_once "comment/edit.php";
             break;
 
         // Statistics and reporting

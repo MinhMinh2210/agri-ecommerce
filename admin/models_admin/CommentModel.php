@@ -1,5 +1,11 @@
 <?php
+require_once "../config/Database.php";
+
     class CommentModel{
+        private $db;
+        public function __construct() {
+            $this->db = new Database();
+        }
         function select_all_comments() {
             $sql = "
                 SELECT
@@ -19,7 +25,7 @@
                 ORDER BY comments.comment_id DESC;
             ";
 
-            return pdo_query($sql);
+            return $this->db->query($sql);
         }
 
         function select_comment_by_id($comment_id) {
@@ -41,18 +47,18 @@
                 WHERE comments.comment_id = ?;
             ";
 
-            return pdo_query_one($sql, $comment_id);
+            return $this->db->queryOne($sql, $comment_id);
         }
 
         public function update_status_comment($status, $comment_id) {
             $sql = "UPDATE comments SET status = ? WHERE comment_id = ?";
 
-            pdo_execute($sql, $status, $comment_id);
+            $this->db->execute($sql, $status, $comment_id);
         }
 
         public function delete_comment($comment_id) {
             $sql = "DELETE FROM comments WHERE comment_id = ?";
-            pdo_execute($sql, $comment_id);
+            $this->db->execute($sql, $comment_id);
         }
 
 
