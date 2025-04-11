@@ -95,14 +95,9 @@
 <script src="public/js/owl.carousel.min.js"></script>
 <script src="public/js/jquery.nicescroll.min.js"></script>
 <script src="public/js/main.js"></script>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/agri-ecommerce/public/chatbot.php'); ?>
 
-<!-- dialogflow -->
-<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<df-messenger
-    intent="WELCOME"
-    chat-title="NongSanChatbot"
-    agent-id="c8356ff6-bb20-44e1-93fe-9e0db7d0ec8b"
-    language-code="vi"></df-messenger>
+
 
 </body>
 
