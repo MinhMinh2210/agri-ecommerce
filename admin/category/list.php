@@ -3,7 +3,7 @@
     <div class="bg-light rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Danh mục</h6>
-            <a href="them-danh-muc" class="btn btn-success"><i class="fa fa-plus"></i> Thêm danh mục</a>
+            <a href="add-category" class="btn btn-success"><i class="fa fa-plus"></i> Thêm danh mục</a>
         </div>
 
         <div class="table-responsive">
@@ -51,8 +51,8 @@
                                         <i class="bi bi-three-dots-vertical"></i>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="index.php?quanli=cap-nhat-danh-muc&id=<?= $cate_id ?>">Sửa</a></li>
-                                        <li><a class="dropdown-item text-danger" href="danh-sach-danh-muc&xoa=<?= $cate_id ?>&qty_pd=<?= $qty_product ?>">Xóa</a></li>
+                                        <li><a class="dropdown-item" href="update-category&id=<?= $cate_id ?>">Sửa</a></li>
+                                        <li><a class="dropdown-item text-danger" href="categories&xoa=<?= $cate_id ?>&qty_pd=<?= $qty_product ?>">Xóa</a></li>
                                     </ul>
                                 </div>
                             </td>

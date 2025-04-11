@@ -83,9 +83,9 @@ foreach ($statistics_orders as $value) {
                 Biểu đồ
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a href="luot-ban-theo-ngay&type_chart=bar" class="dropdown-item">Bar Chart</a></li>
-                <li><a href="luot-ban-theo-ngay&type_chart=line" class="dropdown-item">Line Chart</a></li>
-                <li><a href="luot-ban-theo-ngay&type_chart=doughnut" class="dropdown-item">Doughnut</a></li>
+                <li><a href="chart-order-date&type_chart=bar" class="dropdown-item">Bar Chart</a></li>
+                <li><a href="chart-order-date&type_chart=line" class="dropdown-item">Line Chart</a></li>
+                <li><a href="chart-order-date&type_chart=doughnut" class="dropdown-item">Doughnut</a></li>
             </ul>
         </div>
 
@@ -94,11 +94,11 @@ foreach ($statistics_orders as $value) {
                 Thời gian
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a href="luot-ban-theo-ngay&limit_day=100" class="dropdown-item">Xem tất cả</a></li>
-                <li><a href="luot-ban-theo-ngay&limit_day=7" class="dropdown-item">7 ngày</a></li>
-                <li><a href="luot-ban-theo-ngay&limit_day=14" class="dropdown-item">14 ngày</a></li>
-                <li><a href="luot-ban-theo-ngay&limit_day=21" class="dropdown-item">21 ngày</a></li>
-                <li><a href="luot-ban-theo-ngay&limit_day=30" class="dropdown-item">30 ngày</a></li>
+                <li><a href="chart-order-date&limit_day=100" class="dropdown-item">Xem tất cả</a></li>
+                <li><a href="chart-order-date&limit_day=7" class="dropdown-item">7 ngày</a></li>
+                <li><a href="chart-order-date&limit_day=14" class="dropdown-item">14 ngày</a></li>
+                <li><a href="chart-order-date&limit_day=21" class="dropdown-item">21 ngày</a></li>
+                <li><a href="chart-order-date&limit_day=30" class="dropdown-item">30 ngày</a></li>
             </ul>
         </div>
     </div>

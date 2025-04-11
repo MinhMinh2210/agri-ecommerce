@@ -1,7 +1,8 @@
 <?php
 $current_page = isset($_GET['quanli']) ? $_GET['quanli'] : 'index';
 
-function isActive($page, $current_page) {
+function isActive($page, $current_page)
+{
     return $page == $current_page ? 'active text-success' : 'text-dark';
 }
 ?>
@@ -29,13 +30,13 @@ function isActive($page, $current_page) {
                     <a href="index.php" class="nav-item nav-link <?= $current_page == 'index' ? 'active text-success' : 'text-dark' ?>">
                         <i class="fa fa-tachometer-alt me-2"></i>Trang chủ
                     </a>
-                    <a href="index.php?quanli=danh-sach-don-hang" class="nav-item nav-link <?= isActive('danh-sach-don-hang', $current_page) ?>">
+                    <a href="orders" class="nav-item nav-link <?= isActive('orders', $current_page) ?>">
                         <i class="fa fa-shopping-basket me-2"></i>Đơn hàng
                     </a>
-                    <a href="index.php?quanli=danh-sach-danh-muc" class="nav-item nav-link <?= isActive('danh-sach-danh-muc', $current_page) ?>">
+                    <a href="categories" class="nav-item nav-link <?= isActive('categories', $current_page) ?>">
                         <i class="fa fa-th me-2"></i>Danh mục
                     </a>
-                    <a href="index.php?quanli=danh-sach-san-pham" class="nav-item nav-link <?= isActive('danh-sach-san-pham', $current_page) ?>">
+                    <a href="products" class="nav-item nav-link <?= isActive('products', $current_page) ?>">
                         <i class="fas fa-box me-2"></i>Sản phẩm
                     </a>
                     <div class="nav-item dropdown">
@@ -43,21 +44,21 @@ function isActive($page, $current_page) {
                             <i class="fas fa-chart-bar me-2"></i> Thống kê
                         </a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="thong-ke-san-pham" class="dropdown-item">Sản phẩm - danh mục</a>
+                            <a href="statistic-product" class="dropdown-item">Sản phẩm - danh mục</a>
                             <a href="thong-ke-don-hang" class="dropdown-item">Đơn hàng</a>
                         </div>
                     </div>
-                    <a href="index.php?quanli=danh-sach-khach-hang" class="nav-item nav-link <?= isActive('danh-sach-khach-hang', $current_page) ?>">
+                    <a href="users" class="nav-item nav-link <?= isActive('users', $current_page) ?>">
                         <i class="fas fa-users me-2"></i>Thành viên
                     </a>
-                    <a href="index.php?quanli=binh-luan" class="nav-item nav-link <?= isActive('binh-luan', $current_page) ?>">
+                    <a href="binh-luan" class="nav-item nav-link <?= isActive('binh-luan', $current_page) ?>">
                         <i class="fas fa-comment me-2"></i>Bình luận
                     </a>
                 </div>
 
 
 
-                    <!-- <div class="nav-item dropdown">
+                <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="signin.html" class="dropdown-item">Sign In</a>
@@ -66,7 +67,7 @@ function isActive($page, $current_page) {
                             <a href="blank.html" class="dropdown-item">Blank Page</a>
                         </div>
                     </div> -->
-                
+
             </nav>
         </div>
         <!-- Sidebar End -->
@@ -125,7 +126,7 @@ function isActive($page, $current_page) {
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-white border-1 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Hồ sơ</a>
-                            <a href="index.php?quanli=dang-xuat" class="dropdown-item">Đăng xuất</a>
+                            <a href="dang-xuat" class="dropdown-item">Đăng xuất</a>
                         </div>
                     </div>
                 </div>

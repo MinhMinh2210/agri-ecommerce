@@ -29,47 +29,47 @@ if (!isset($_GET['url'])) {
 } else {
     switch ($_GET['url']) {
         // Product management
-        case 'danh-sach-san-pham':
+        case 'products':
             $controller = new ProductController();
             $controller->list();
             break;
-        case 'them-san-pham':
+        case 'add-product':
             $controller = new ProductController();
             $controller->add();
             break;
-        case 'cap-nhat-san-pham':
+        case 'update-product':
             $controller = new ProductController();
             $controller->edit();
             break;
-        case 'thung-rac-san-pham':
+        case 'recycle-product':
             $controller = new ProductController();
             $controller->delete();
             break;
 
-        // Category management
-        case 'danh-sach-danh-muc':
+        // Category
+        case 'categories':
             $controller = new CategoryController();
             $controller->list();
             break;
-        case 'them-danh-muc':
+        case 'add-category':
             $controller = new CategoryController();
             $controller->add();
             break;
-        case 'cap-nhat-danh-muc':
+        case 'update-category':
             $controller = new CategoryController();
             $controller->edit();
             break;
 
         // Order management
-        case 'danh-sach-order':
+        case 'orders':
             $controller = new OrderController();
             $controller->list();
             break;
-        case 'danh-sach-don-cho':
+        case 'waiting-orders':
             $controller = new OrderController();
             $controller->unconfirmed();
             break;
-        case 'cap-nhat-order':
+        case 'update-order':
             $controller = new OrderController();
             $controller->edit();
             break;
@@ -79,32 +79,32 @@ if (!isset($_GET['url'])) {
             unset($_SESSION['user_admin']);
             header("Location: login.php");
             break;
-        case 'danh-sach-khach-hang':
+        case 'users':
             $controller = new CustomerController();
             $controller->list();
             break;
-        case 'them-tai-khoan':
+        case 'add-user':
             $controller = new CustomerController();
             $controller->add();
             break;
 
         // Statistics and reporting
-        case 'thong-ke-san-pham':
+        case 'statistic-product':
             require_once "statistic/products.php";
             break;
-        case 'thong-ke-order':
+        case 'statistic-order':
             require_once "statistic/orders.php";
             break;
-        case 'bieu-do-luot-ban':
+        case 'chart-order':
             require_once "statistic/chart-order.php";
             break;
-        case 'top-luot-ban':
+        case 'top-orders':
             require_once "statistic/top-orders.php";
             break;
-        case 'luot-ban-theo-ngay':
+        case 'chart-order-date':
             require_once "statistic/chart-order-date.php";
             break;
-        case 'xuat-exel':
+        case 'export_excel':
             require_once "export_exel/export_orders.php";
             break;
 

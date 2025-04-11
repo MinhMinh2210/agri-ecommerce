@@ -2,7 +2,7 @@
     <div class="bg-light text-center rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Danh sách tài khoản</h6>
-            <a href="them-tai-khoan" class="btn btn-success"><i class="fa fa-plus"></i> Thêm tài khoản</a>
+            <a href="add-user" class="btn btn-success"><i class="fa fa-plus"></i> Thêm tài khoản</a>
         </div>
 
         <div class="table-responsive">

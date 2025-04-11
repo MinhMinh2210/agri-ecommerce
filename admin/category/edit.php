@@ -7,7 +7,7 @@
 
             <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4">
-                    <a href="index.php?quanli=danh-sach-danh-muc" class="link-not-hover text-success">Danh mục</a>
+                    <a href="categories" class="link-not-hover text-success">Danh mục</a>
                     / Cập nhật danh mục
                 </h6>
                 <?= $html_alert ?>

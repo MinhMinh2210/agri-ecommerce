@@ -1,13 +1,12 @@
-
 <!-- LIST PRODUCTS -->
 <div class="container-fluid pt-4 px-4">
     <div class="bg-light text-center rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">
-                <a href="index.php?quanli=danh-sach-san-pham" class="link-not-hover text-success">Danh sách sản phẩm</a>
+                <a href="products" class="link-not-hover text-success">Danh sách sản phẩm</a>
                 / Thùng rác
             </h6>
-            <a href="index.php?quanli=them-san-pham" class="btn btn-success"><i class="fa fa-plus"></i> Thêm sản phẩm</a>
+            <a href="add-product" class="btn btn-success"><i class="fa fa-plus"></i> Thêm sản phẩm</a>
         </div>
 
         <?php if (count($list_products) > 0) { ?>
@@ -41,7 +40,7 @@
                                 <td><?= number_format($value['price']) . "đ" ?></td>
                                 <td><?= number_format($value['sale_price']) . "đ" ?></td>
                                 <td>
-                                    <a class="btn btn-sm btn-secondary" href="index.php?quanli=thung-rac-san-pham&khoiphuc=<?= $value['product_id'] ?>">
+                                    <a class="btn btn-sm btn-secondary" href="recycle-product&khoiphuc=<?= $value['product_id'] ?>">
                                         <i class="fa fa-undo"></i> Khôi phục
                                     </a>
                                 </td>
