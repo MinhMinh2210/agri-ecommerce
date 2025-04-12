@@ -18,7 +18,7 @@ $count_products = $OrderModel->count_products();
 
         <!-- Products -->
         <div class="col-sm-6 col-xl-3">
-            <a href="danh-sach-san-pham" class="bg-light rounded d-flex align-items-center justify-content-between p-4 text-decoration-none">
+            <a href="products" class="bg-light rounded d-flex align-items-center justify-content-between p-4 text-decoration-none">
                 <i class="fas fa-box fa-3x text-success"></i>
                 <div class="ms-3">
                     <p class="mb-2 text-dark">Sản phẩm</p>
@@ -29,7 +29,7 @@ $count_products = $OrderModel->count_products();
 
         <!-- Pending Orders -->
         <div class="col-sm-6 col-xl-3">
-            <a href="danh-sach-don-cho" class="bg-light rounded d-flex align-items-center justify-content-between p-4 text-decoration-none">
+            <a href="waiting-orders" class="bg-light rounded d-flex align-items-center justify-content-between p-4 text-decoration-none">
                 <i class="fa fa-chart-pie fa-3x text-success"></i>
                 <div class="ms-3">
                     <p class="mb-2 text-dark">Đơn chờ</p>

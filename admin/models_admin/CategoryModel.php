@@ -1,27 +1,33 @@
 <?php
+require_once "../config/Database.php";
+
     class CategoryModel {
+        private $db;
+        public function __construct() {
+            $this->db = new Database();
+        }
         public function select_categories_limit($limit) {
             $sql = "SELECT * FROM categories WHERE status = 1 ORDER BY category_id DESC LIMIT $limit";
 
-            return pdo_query($sql);
+            return $this->db->query($sql);
         }
 
         public function select_all_categories() {
             $sql = "SELECT * FROM categories ORDER BY category_id";
 
-            return pdo_query($sql);
+            return $this->db->query($sql);
         }
 
         public function select_category_by_id($category_id) {
             $sql = "SELECT * FROM categories WHERE category_id = ?";
 
-            return pdo_query_one($sql, $category_id);
+            return $this->db->queryOne($sql, $category_id);
         }
 
         public function select_name_categories() {
             $sql = "SELECT name FROM categories";
 
-            return pdo_query($sql);
+            return $this->db->query($sql);
         }
 
         // Danh sách danh mục hiển số số lượng sản phẩm mỗi danh mục
@@ -33,7 +39,7 @@
                     LEFT JOIN products p 
                     ON c.category_id = p.category_id
                     GROUP BY c.category_id";
-            return pdo_query($sql);        
+            return $this->db->query($sql);        
         }
 
         public function insert_categories($name, $image, $status) {
@@ -41,7 +47,7 @@
            (name, image, status)
             VALUES (?,?,?)";
 
-            pdo_execute($sql, $name, $image, $status);
+            $this->db->execute($sql, $name, $image, $status);
         }
 
         public function update_category($name, $image, $status, $category_id) {
@@ -55,12 +61,12 @@
             $sql .= " status = '".$status."'
                     WHERE category_id = ".$category_id;
 
-            pdo_execute($sql);
+            $this->db->execute($sql);
         }
 
         public function delete_category($category_id) {
             $sql = "DELETE FROM categories WHERE category_id = ?";
-            pdo_execute($sql, $category_id);
+            $this->db->execute($sql, $category_id);
         }
     }
 

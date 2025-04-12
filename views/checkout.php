@@ -28,8 +28,12 @@ if (isset($_SESSION['user'])) {
     <section class="checkout spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <h6 class="coupon__link"><span class="icon_tag_alt mr-1"></span>Tiến hành thanh toán đơn hàng <a class="text-primary" href="cart">Trở lại giỏ hàng</a> </h6>
+                <div class="col-lg-12 d-flex justify-content-between align-items-center mb-4">
+                    <!-- <h6 class="coupon__link"><span class="icon_tag_alt mr-1"></span>Tiến hành thanh toán đơn hàng <a class="text-primary" href="cart">Trở lại giỏ hàng</a> </h6> -->
+                    <div><h2 class="text__title">Thanh toán đơn hàng</h2></div>
+                    <div class="cart__btn mt-2 mb-3 rounded-circle">
+                        <a href="cart" class="rounded">Trở lại giỏ hàng</a>
+                    </div>
                 </div>
             </div>
             <form action="" method="post" class="checkout__form">
@@ -40,54 +44,7 @@ if (isset($_SESSION['user'])) {
                 }
                 ?>
                 <div class="row">
-                    <div class="col-lg-8">
-                        <h5>CHI TIẾT THANH TOÁN</h5>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="checkout__form__input">
-                                    <p>Họ tên <span>*</span></p>
-                                    <input type="text" disabled name="full_name" value="<?= $_SESSION['user']['full_name'] ?>">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="checkout__form__input">
-                                    <p>Email <span>*</span></p>
-                                    <input disabled type="text" value="<?= $_SESSION['user']['email'] ?>">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-
-                                <div class="checkout__form__input">
-                                    <p>Địa chỉ <span>*</span></p>
-                                    <input disabled type="text" value="<?= $_SESSION['user']['address'] ?>">
-
-                                </div>
-
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="checkout__form__input">
-                                    <p>Số điện thoại <span>*</span></p>
-                                    <input disabled type="text" name="phone" value="<?= $_SESSION['user']['phone'] ?>">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="checkout__form__input">
-                                    <p>Ghi chú<span></span></p>
-                                    <input type="text" name="note">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <p style="color: #000000; font-weight:500; font-size: 15px;">Bạn có thể sử dụng địa chỉ mặc định khi đăng ký, hoặc nhập nhập địa chỉ khác</p>
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="cart__btn">
-                                    <a href="checkout-2">Nhập địa chỉ mới</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
+                <div class="col-lg-6">
                         <div class="checkout__order">
                             <h5>ĐƠN HÀNG</h5>
                             <div class="checkout__order__product">
@@ -98,12 +55,14 @@ if (isset($_SESSION['user'])) {
                                     </li>
                                     <?php
                                     $i = 0;
-                                    $totalPayment = 0;
+                                    $totalPayment = 0; 
                                     foreach ($list_carts as $value) {
                                         extract($value);
                                         $totalPrice = ($product_price * $product_quantity);
                                         $totalPayment += $totalPrice;
                                         $i++;
+
+                                        
                                     ?>
                                         <li>
                                             <!-- Thông tin insert vào orders -->
@@ -115,11 +74,20 @@ if (isset($_SESSION['user'])) {
                                             <input type="hidden" name="product_id[]" value="<?= $product_id ?>">
                                             <input type="hidden" name="quantity[]" value="<?= $product_quantity ?>">
                                             <input type="hidden" name="price[]" value="<?= $product_price ?>">
+                                        
 
                                             <?= $i ?>.
                                             <?= $product_name ?>
                                             <a class="text-primary">x<?= $product_quantity ?></a>
                                             <span><?= number_format($totalPrice) ?>đ</span>
+                                            <!-- <div style="display: flex; align-items: center;">
+                                                <?php if ($product_images): ?>
+                                                    <img class="product-img" src="uploads/<?= htmlspecialchars($product_images) ?>" alt="<?= $product_name ?>">
+                                                <?php endif; ?>
+                                                <span><?= $i ?>. <?= $product_name ?></span>
+                                                <a class="text-primary"> x<?= $product_quantity ?></a>
+                                                <span><?= number_format($totalPrice) ?>đ</span>
+                                            </div> -->
                                         </li>
                                     <?php
                                     }
@@ -139,11 +107,47 @@ if (isset($_SESSION['user'])) {
                                     <span class="checkmark"></span>
                                 </label>
                             </div> -->
-                            <?php if ($count_cart > 0) { ?>
-                                <div class="checkout__order__widget text-center text-dark mb-2">
-                                    Thanh toán khi nhận hàng
+                            <div class="checkout__order__widget text-center mb-2" style="color: #53a551;">
+                                    <strong>Thanh toán khi nhận hàng</strong>
                                 </div>
-                                <button type="button" class="site-btn" data-toggle="modal" data-target="#checkout-1">
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h5>Thông tin Khách hàng</h5>
+                        <div class="row g-3">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="checkout__form__input">
+                                    <p>Họ tên <span>*</span></p>
+                                    <input type="text" disabled name="full_name" value="<?= $_SESSION['user']['full_name'] ?>">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="checkout__form__input">
+                                    <p>Số điện thoại <span>*</span></p>
+                                    <input disabled type="text" name="phone" value="<?= $_SESSION['user']['phone'] ?>">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+
+                                <div class="checkout__form__input">
+                                    <p>Địa chỉ <span>*</span></p>
+                                    <input disabled type="text" value="<?= $_SESSION['user']['address'] ?>">
+
+                                </div>
+
+                            </div>
+                            
+                            <div class="col-lg-12">
+                                <div class="checkout__form__input">
+                                    <p>Ghi chú<span></span></p>
+                                    <input type="text" name="note">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 text-center">
+                            <?php if ($count_cart > 0) { ?>
+                               
+                                <button type="button" class="site-btn w-75" data-toggle="modal" data-target="#checkout-1">
                                     ĐẶT HÀNG
                                 </button>
                                 <!-- Modal thanh toán-->
@@ -171,8 +175,11 @@ if (isset($_SESSION['user'])) {
                                 </div>
                                 <a href="shop" class="site-btn btn">Xem sản phẩm</a>
                             <?php } ?>
+                            </div>
+
                         </div>
                     </div>
+                    
                 </div>
             </form>
         </div>
@@ -196,9 +203,12 @@ if (isset($_SESSION['user'])) {
 
 
 <style>
+    .text__title{
+        color: #53a551;
+    }
     .cart__btn a:hover {
-        background-color: #0A68FF;
-        color: #fff;
+        background-color: #53a551;
+        color: #FFF;
         transition: 0.2s;
     }
 

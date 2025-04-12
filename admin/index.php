@@ -13,66 +13,63 @@ require_once "controllers_admin/ProductController.php";
 require_once "controllers_admin/OrderController.php";
 require_once "controllers_admin/CategoryController.php";
 require_once "controllers_admin/CustomerController.php";
-require_once "models_admin/pdo_library.php";
 require_once "models_admin/BaseModel.php";
 require_once "models_admin/CategoryModel.php";
 require_once "models_admin/ProductModel.php";
 require_once "models_admin/CustomerModel.php";
 require_once "models_admin/OrderModel.php";
-require_once "models_admin/PostModel.php";
-require_once "models_admin/CommentModel.php";
 
 // Include header components
 require_once "components/head.php";
 require_once "components/header.php";
 
 // Default home page if no query parameter is set
-if (!isset($_GET['quanli'])) {
+if (!isset($_GET['url'])) {
     require_once "home.php";
 } else {
-    switch ($_GET['quanli']) {
+    switch ($_GET['url']) {
         // Product management
-        case 'danh-sach-san-pham':
+        case 'products':
             $controller = new ProductController();
             $controller->list();
             break;
-        case 'them-san-pham':
+        case 'add-product':
             $controller = new ProductController();
             $controller->add();
             break;
-        case 'cap-nhat-san-pham':
+        case 'update-product':
             $controller = new ProductController();
             $controller->edit();
             break;
-        case 'thung-rac-san-pham':
+        case 'recycle-product':
             $controller = new ProductController();
             $controller->delete();
             break;
 
-        // Category management
-        case 'danh-sach-danh-muc':
+        // Category
+        case 'categories':
             $controller = new CategoryController();
             $controller->list();
             break;
-        case 'them-danh-muc':
+        case 'add-category':
             $controller = new CategoryController();
             $controller->add();
             break;
-        case 'cap-nhat-danh-muc':
+        case 'update-category':
             $controller = new CategoryController();
             $controller->edit();
             break;
 
         // Order management
-        case 'danh-sach-order':
+        case 'orders':
             $controller = new OrderController();
             $controller->list();
             break;
-        case 'danh-sach-don-cho':
+        case 'waiting-orders':
             $controller = new OrderController();
             $controller->unconfirmed();
             break;
-        case 'cap-nhat-order':
+        case 'update-order':
             $controller = new OrderController();
             $controller->edit();
             break;
@@ -82,40 +79,32 @@ if (!isset($_GET['quanli'])) {
             unset($_SESSION['user_admin']);
             header("Location: login.php");
             break;
-        case 'danh-sach-khach-hang':
+        case 'users':
             $controller = new CustomerController();
             $controller->list();
             break;
-        case 'them-tai-khoan':
+        case 'add-user':
             $controller = new CustomerController();
             $controller->add();
             break;
 
-        // Comment management
-        case 'binh-luan':
-            require_once "comment/list.php";
-            break;
-        case 'chi-tiet-binh-luan':
-            require_once "comment/edit.php";
-            break;
-
         // Statistics and reporting
-        case 'thong-ke-san-pham':
+        case 'statistic-product':
             require_once "statistic/products.php";
             break;
-        case 'thong-ke-order':
+        case 'statistic-order':
             require_once "statistic/orders.php";
             break;
-        case 'bieu-do-luot-ban':
+        case 'chart-order':
             require_once "statistic/chart-order.php";
             break;
-        case 'top-luot-ban':
+        case 'top-orders':
             require_once "statistic/top-orders.php";
             break;
-        case 'luot-ban-theo-ngay':
+        case 'chart-order-date':
             require_once "statistic/chart-order-date.php";
             break;
-        case 'xuat-exel':
+        case 'export_excel':
             require_once "export_exel/export_orders.php";
             break;
 
